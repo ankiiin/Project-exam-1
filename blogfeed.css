@@ -1,0 +1,31 @@
+.page-title {
+    font-size: 28px;
+    color: #EDE8E1;
+    text-align: center;
+    margin-top: 60px; 
+    margin-bottom: 30px; 
+}
+
+.intro-text {
+    color: #EDE8E1;
+    line-height: 1.8;
+    max-width: 80%;
+    margin: 0 auto 40px auto; 
+    text-align: center;
+    padding: 0 15px;
+}
+
+.section-divider {
+    width: 96%;
+    margin: 30px auto; 
+    border: none;
+    border-top: 1px solid #EDE8E1;
+}
+
+.latest-posts-title {
+    font-size: 24px;
+    color: #EDE8E1;
+    text-align: center;
+    margin-top: 40px; 
+    margin-bottom: 20px; 
+}

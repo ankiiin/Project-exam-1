@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #3D4435;
+    color: #EDE8E1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+}
+
+header h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #EDE8E1;
+    text-decoration: none;
+}
+
+.responsive-logo-link {
+    text-decoration: none;
+}
+
+.responsive-logo {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.desktop-nav .nav-text {
+    font-size: 16px;
+    color: #EDE8E1;
+    margin-top: 10px;
+}
+
+.desktop-nav .nav-text {
+    font-size: 18px;
+    color: #EDE8E1;
+    text-decoration: none;
+    border: none; 
+}
+
+.join-button {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    background-color: #EDE8E1;
+    color: #000000;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 100px auto 40px auto;
+    padding: 0 20px;
+}
+
+main h2 {
+    font-size: 24px;
+    color: #EDE8E1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.centered-text {
+    color: #EDE8E1;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 80%;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.centered-text p {
+    margin: 0;
+}
+
+.download-guide {
+    color: #EDE8E1;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 15px;
+}
+
+.section-divider {
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 30px auto; 
+    border: none;
+    border-top: 2px solid #EDE8E1; 
+}
+
+footer {
+    background-color: #A1A69A;
+    padding: 20px 15px;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.newsletter-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.newsletter-signup input[type="email"] {
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+}
+
+.signup-button {
+    background-color: #A8D5BA;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #EDE8E1;
+    color: #3D4435;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+    position: relative;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #3D4435;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.popup-heading {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.login-button, .register-button, .hamburger-join-button, .blog-button {
+    background-color: #8AA784;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+    width: 100%;
+    color: #FFFFFF;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover, .register-button:hover, .hamburger-join-button:hover, .blog-button:hover {
+    background-color: #6f9a67;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav, .join-button {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        cursor: pointer;
+    }
+
+    .hamburger-bar {
+        width: 25px;
+        height: 3px;
+        background-color: #EDE8E1;
+        margin: 4px 0;
+    }
+
+    .responsive-logo {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #3D4435;
+    border-radius: 10px;
+}
+
+.registration-form label {
+    color: #EDE8E1;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #A1A69A;
+    border-radius: 5px;
+}
+
+.signup-button {
+    width: 100%;
+    background-color: #A8D5BA;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#joinPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 20; 
+}
+
+#hamburgerPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+}
