@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavara Wellness - Blog Posts</title>
+    <title>Lavara Wellness - Home</title>
     <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/posts.css">
     <script src="../JS/main.js" defer></script>
-    <script src="../JS/fetchData.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,11 +23,26 @@
         </div>
     </header>
     <main>
-        <div class="container">
-            <div class="thumbnail-grid" id="blogPosts">
-            </div>
+        <div class="carousel-section">
+            <div class="carousel-placeholder">Carousel goes here</div>
         </div>
+        <hr class="section-divider">
+        <h2 class="page-title">Welcome to Lavara Wellness</h2>
+        <p class="centered-text">
+            At Lavara Wellness, we believe in embracing a healthier lifestyle through nourishing food, mindful practices, and holistic care. Here, you'll find inspiration on everything from delicious and wholesome recipes to meditation tips, skincare routines, and wellness advice. Whether you're looking to elevate your meals or find balance in your day-to-day, Lavara Wellness is your space to explore and nurture both body and mind. Dive in, and let's embark on this journey to better living, together!
+        </p>
+        <hr class="section-divider">
+        <h3 class="latest-posts-title">Latest Posts</h3>
     </main>
+    <footer>
+        <p>Please sign up to our newsletter!</p>
+        <div class="newsletter-signup">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <a href="../HTML/newsletter.html">
+                <button class="signup-button">Sign up</button>
+            </a>
+        </div>
+    </footer>
     <div class="popup" id="joinPopup" onclick="closeOnClickOutside(event, 'joinPopup')">
         <div class="popup-content">
             <button class="close-button" onclick="toggleJoinPopup()">✕</button>
@@ -47,15 +60,5 @@
             <button class="blog-button" onclick="navigateToPosts()">Blog Posts</button>
         </div>
     </div>
-    <footer>
-        <p>Please sign up to our newsletter!</p>
-        <div class="newsletter-signup">
-            <input type="email" placeholder="Email address" aria-label="Email address">
-            <a href="../HTML/newsletter.html">
-                <button class="signup-button">Sign up</button>
-            </a>
-        </div>
-    </footer>
 </body>
 </html>
-

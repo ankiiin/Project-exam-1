@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavara Wellness - Blog Posts</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/posts.css">
+    <script src="../JS/main.js" defer></script>
+    <script src="../JS/fetchData.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="../HTML/index.html" class="responsive-logo-link">
+            <h1 class="responsive-logo">Lavara Wellness</h1>
+        </a>
+        <nav class="desktop-nav">
+            <a href="../HTML/posts.html" class="nav-text">Blog Posts</a>
+        </nav>
+        <button class="join-button" onclick="toggleJoinPopup()">Join us!</button>
+        <div class="hamburger-menu" onclick="toggleHamburgerMenu()">
+            <div class="hamburger-bar"></div>
+            <div class="hamburger-bar"></div>
+            <div class="hamburger-bar"></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="thumbnail-grid" id="blogPosts">
+            </div>
+        </div>
+    </main>
+    <div class="popup" id="joinPopup" onclick="closeOnClickOutside(event, 'joinPopup')">
+        <div class="popup-content">
+            <button class="close-button" onclick="toggleJoinPopup()">✕</button>
+            <h3 class="popup-heading">Welcome! Choose an option</h3>
+            <button class="login-button">Login</button>
+            <a href="../HTML/account.html">
+                <button class="register-button">Register</button>
+            </a>
+        </div>
+    </div>
+    <div class="popup" id="hamburgerPopup" onclick="closeOnClickOutside(event, 'hamburgerPopup')">
+        <div class="popup-content">
+            <button class="close-button" onclick="toggleHamburgerMenu()">✕</button>
+            <button class="hamburger-join-button" onclick="toggleJoinPopup()">Join us</button>
+            <button class="blog-button" onclick="navigateToPosts()">Blog Posts</button>
+        </div>
+    </div>
+    <footer>
+        <p>Please sign up to our newsletter!</p>
+        <div class="newsletter-signup">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <a href="../HTML/newsletter.html">
+                <button class="signup-button">Sign up</button>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
