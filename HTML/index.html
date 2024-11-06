@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lavara Wellness - Home</title>
     <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/blogfeed.css">
     <script src="../JS/main.js" defer></script>
+    <script src="../JS/blogfeed.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,8 +25,13 @@
         </div>
     </header>
     <main>
+        <!-- Carousel Section -->
         <div class="carousel-section">
-            <div class="carousel-placeholder">Carousel goes here</div>
+            <div class="carousel-images">
+                <!-- Carousel images will be dynamically populated here -->
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
         </div>
         <hr class="section-divider">
         <h2 class="page-title">Welcome to Lavara Wellness</h2>
@@ -33,6 +40,13 @@
         </p>
         <hr class="section-divider">
         <h3 class="latest-posts-title">Latest Posts</h3>
+        
+        <!-- Thumbnail Grid Section -->
+        <div class="container">
+            <div class="thumbnail-grid" id="postGrid">
+                <!-- Thumbnails will be dynamically populated here -->
+            </div>
+        </div>
     </main>
     <footer>
         <p>Please sign up to our newsletter!</p>

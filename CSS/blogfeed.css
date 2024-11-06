@@ -1,31 +1,214 @@
-.page-title {
-    font-size: 28px;
-    color: #EDE8E1;
-    text-align: center;
-    margin-top: 60px; 
-    margin-bottom: 30px; 
+/* General Spacing Adjustments */
+.carousel-section {
+    padding: 30px 0;
+    margin-bottom: 50px;
 }
 
-.intro-text {
-    color: #EDE8E1;
-    line-height: 1.8;
-    max-width: 80%;
-    margin: 0 auto 40px auto; 
-    text-align: center;
+.centered-text {
+    margin-top: 30px;
+    margin-bottom: 40px;
     padding: 0 15px;
 }
 
 .section-divider {
     width: 96%;
-    margin: 30px auto; 
+    margin: 40px auto;
     border: none;
     border-top: 1px solid #EDE8E1;
 }
 
-.latest-posts-title {
-    font-size: 24px;
+.page-title, .latest-posts-title {
+    font-size: 28px;
     color: #EDE8E1;
     text-align: center;
-    margin-top: 40px; 
-    margin-bottom: 20px; 
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Carousel container styles */
+.carousel {
+    position: relative;
+    width: 90vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 60vw;
+    max-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.rounded-image {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #EDE8E1;
+    font-size: 24px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effect for desktop */
+@media (min-width: 769px) {
+    .carousel-item:hover .rounded-image {
+        filter: blur(4px) brightness(0.7);
+    }
+
+    .carousel-item:hover .carousel-title-overlay {
+        opacity: 1;
+    }
+}
+
+/* Show overlay by default on mobile */
+@media (max-width: 768px) {
+    .carousel-item .rounded-image {
+        filter: blur(4px) brightness(0.7);
+    }
+
+    .carousel-item .carousel-title-overlay {
+        opacity: 1;
+    }
+
+    /* Hide navigation arrows on mobile */
+    .carousel-control {
+        display: none;
+    }
+}
+
+/* Navigation button styling */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #EDE8E1;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.carousel-control.prev {
+    left: 15px;
+}
+
+.carousel-control.next {
+    right: 15px;
+}
+
+/* Thumbnail grid styling */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #ccc;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.05);
+    filter: blur(3px) brightness(70%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EDE8E1;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.thumbnail:hover .overlay {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .thumbnail-grid {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .thumbnail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .thumbnail img {
+        filter: blur(3px) brightness(70%);
+    }
+
+    .overlay {
+        opacity: 1;
+    }
+
+    .thumbnail:hover img,
+    .thumbnail:hover .overlay {
+        transform: none;
+        opacity: 1;
+    }
 }
