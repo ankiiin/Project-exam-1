@@ -1,6 +1,5 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5raWlpbiIsImVtYWlsIjoiYW5uaGFtNDkzNDRAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzA4MDI2Nzl9.a0NCLC25IYwiNwdII0_kJNjmO7g4JNsZUukkgnMWC9E";
+const token = "your-token-here";
 
-// Fetch carousel posts from Swagger
 async function fetchCarouselPosts() {
     try {
         const response = await fetch("https://v2.api.noroff.dev/blog/posts/ankiiin?limit=3", {
@@ -23,7 +22,6 @@ async function fetchCarouselPosts() {
     }
 }
 
-// Display posts in the carousel
 function displayCarouselPosts(posts) {
     const carouselContainer = document.querySelector('.carousel-images');
     carouselContainer.innerHTML = ''; // Clear any placeholder content
@@ -99,7 +97,6 @@ function prevSlide() {
     showSlide(currentIndex);
 }
 
-// Fetch blog posts for thumbnail grid
 async function fetchBlogPosts() {
     try {
         const response = await fetch('https://v2.api.noroff.dev/blog/posts/ankiiin', {
@@ -154,3 +151,4 @@ window.addEventListener("resize", () => {
     carouselContainer.style.transition = "none";
     carouselContainer.style.transform = `translateX(${offset}px)`;
 });
+

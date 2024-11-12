@@ -14,14 +14,8 @@
             <h1 class="responsive-logo">Lavara Wellness</h1>
         </a>
         <nav class="desktop-nav">
-            <a href="../HTML/posts.html" class="nav-text">Blog Posts</a>
+            <a href="../HTML/newsletter.html" class="nav-text">Join us!</a>
         </nav>
-        <button class="join-button" onclick="toggleJoinPopup()">Join us!</button>
-        <div class="hamburger-menu" onclick="toggleHamburgerMenu()">
-            <div class="hamburger-bar"></div>
-            <div class="hamburger-bar"></div>
-            <div class="hamburger-bar"></div>
-        </div>
     </header>
     <main>
         <h2 class="page-title">You’re In! Welcome to Lavara Wellness</h2>
@@ -38,20 +32,5 @@
             </a>
         </div>
     </footer>
-    <div class="popup" id="joinPopup" onclick="closeOnClickOutside(event, 'joinPopup')">
-        <div class="popup-content">
-            <button class="close-button" onclick="toggleJoinPopup()">✕</button>
-            <h3 class="popup-heading">Welcome! Choose an option</h3>
-            <button class="login-button">Login</button>
-            <button class="register-button">Register</button>
-        </div>
-    </div>
-    <div class="popup" id="hamburgerPopup" onclick="closeOnClickOutside(event, 'hamburgerPopup')">
-        <div class="popup-content">
-            <button class="close-button" onclick="toggleHamburgerMenu()">✕</button>
-            <a href="../HTML/posts.html" class="blog-button">Blog Posts</a>
-            <button class="hamburger-join-button" onclick="toggleJoinPopup()">Join us</button>
-        </div>
-    </div>
 </body>
 </html>

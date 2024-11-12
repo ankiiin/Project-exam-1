@@ -1,34 +1,33 @@
-import { fetchPostById } from './fetchData.js';
+import { fetchPostData } from './fetchData.js';
 
-const urlParams = new URLSearchParams(window.location.search);
-const postId = urlParams.get('id');
-async function displaySinglePost() {
-    if (!postId) {
-        console.error("No post ID provided in URL.");
-        return;
+document.addEventListener("DOMContentLoaded", async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get("id"); 
+
+    console.log("Post ID:", postId); 
+
+    if (postId) {
+        const response = await fetchPostData(postId);
+
+        console.log("Fetched Post Data:", response); 
+
+        if (response && response.data) {
+            const data = response.data;
+
+            document.querySelector(".post-title").textContent = data.title || "Untitled";
+
+            const postDate = data.created || data.updated;
+            document.querySelector(".post-date").textContent = postDate 
+                ? `Published on: ${new Date(postDate).toLocaleDateString()}`
+                : "Published: Date unknown";
+
+            document.querySelector(".post-image img").src = data.media?.url || "https://via.placeholder.com/150";
+            document.querySelector(".post-image img").alt = data.media?.alt || "Blog post image";
+            document.querySelector(".post-content").innerHTML = data.body || "<p>No content available for this post.</p>";
+        } else {
+            document.querySelector(".post-content").innerHTML = "<p>Sorry, we couldn't load this post. Please try again later.</p>";
+        }
+    } else {
+        console.error("No post ID found in URL");
     }
-
-    const post = await fetchPostById(postId);
-    if (!post) {
-        document.getElementById("blogPostContainer").innerHTML = "<p>Post not found.</p>";
-        return;
-    }
-
-    const postElement = `
-        <div class="blog-post">
-            <img src="${post.media.url}" alt="${post.media.alt}">
-            <h2>${post.title}</h2>
-            <p>${post.body}</p>
-            <div class="tags">Tags: ${post.tags ? post.tags.join(", ") : "No tags"}</div>
-            <div class="metadata">
-                <span>Published: ${post.created ? new Date(post.created).toLocaleDateString() : "Unknown date"}</span>
-                <span>Popularity: ${post.popularity}</span>
-                <span>Continent: ${post.continent}</span>
-            </div>
-        </div>
-    `;
-
-    document.getElementById("blogPostContainer").innerHTML = postElement;
-}
-
-document.addEventListener("DOMContentLoaded", displaySinglePost);
+});

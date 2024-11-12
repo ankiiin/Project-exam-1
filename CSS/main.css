@@ -22,34 +22,26 @@ header {
     position: relative;
 }
 
+.logo, .responsive-logo-link, .responsive-logo {
+    font-size: 3rem !important; 
+    text-align: center;
+    color: #EDE8E1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 header h1 {
-    font-size: 24px;
+    font-size: 28px !important; 
     text-align: center;
     margin-bottom: 10px;
     color: #EDE8E1;
-    text-decoration: none;
-}
-
-.responsive-logo-link {
-    text-decoration: none;
-}
-
-.responsive-logo {
-    font-size: 2rem;
-    text-align: center;
 }
 
 .desktop-nav .nav-text {
-    font-size: 16px;
+    font-size: 20px;
     color: #EDE8E1;
+    text-decoration: none;
     margin-top: 10px;
-}
-
-.desktop-nav .nav-text {
-    font-size: 18px;
-    color: #EDE8E1;
-    text-decoration: none;
-    border: none; 
 }
 
 .join-button {
@@ -62,6 +54,48 @@ header h1 {
     border: none;
     border-radius: 20px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        cursor: pointer;
+        width: 30px; 
+        height: 24px;
+    }
+
+    .hamburger-bar {
+        width: 100%;
+        height: 3px;
+        background-color: #EDE8E1;
+        margin: 4px 0; 
+    }
+
+    .desktop-nav, .join-button {
+        display: none;
+    }
+
+    .logo, .responsive-logo {
+        font-size: 2.5rem; 
+    }
+
+    main {
+        padding: 0 20px;
+    }
+}
+
+button, .hamburger-menu, .blog-button, .hamburger-join-button, .nav-text, a {
     cursor: pointer;
 }
 
@@ -91,17 +125,6 @@ main h2 {
     padding: 0 15px;
 }
 
-.centered-text p {
-    margin: 0;
-}
-
-.download-guide {
-    color: #EDE8E1;
-    font-weight: bold;
-    text-decoration: underline;
-    margin-top: 15px;
-}
-
 .section-divider {
     width: 90%; 
     max-width: 1200px; 
@@ -109,6 +132,7 @@ main h2 {
     border: none;
     border-top: 2px solid #EDE8E1; 
 }
+
 
 footer {
     background-color: #A1A69A;
@@ -139,7 +163,7 @@ footer p {
     width: 200px;
 }
 
-.signup-button {
+.newsletter-signup button {
     background-color: #A8D5BA;
     border: none;
     padding: 5px 10px;
@@ -203,38 +227,6 @@ footer p {
     background-color: #6f9a67;
 }
 
-@media (max-width: 768px) {
-    .desktop-nav, .join-button {
-        display: none;
-    }
-
-    .hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        left: 20px;
-        top: 30px;
-        cursor: pointer;
-    }
-
-    .hamburger-bar {
-        width: 25px;
-        height: 3px;
-        background-color: #EDE8E1;
-        margin: 4px 0;
-    }
-
-    .responsive-logo {
-        font-size: 1.5rem;
-    }
-
-    main {
-        padding: 0 20px;
-    }
-}
-
 .registration-form {
     display: flex;
     flex-direction: column;
@@ -274,7 +266,7 @@ footer p {
     cursor: pointer;
 }
 
-#joinPopup {
+#joinPopup, #hamburgerPopup {
     display: none;
     position: fixed;
     top: 0;
@@ -285,17 +277,4 @@ footer p {
     justify-content: center;
     align-items: center;
     z-index: 20; 
-}
-
-#hamburgerPopup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 10; 
 }

@@ -3,18 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post</title>
-    <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/blogpost.css">
-    <script type="module" src="../JS/blogpost.js" defer></script>
+    <title>Lavara Wellness - Blog Post</title>
+    <link rel="stylesheet" href="../CSS/main.css"> 
+    <script src="../JS/main.js" defer></script> 
+    <script src="../JS/fetchData.js" type="module" defer></script> 
+    <script src="../JS/blogpost.js" type="module" defer></script> 
 </head>
 <body>
-    <header class="header">
-        <a href="index.html" class="logo">Lavara Wellness</a>
+    <header>
+        <a href="../HTML/index.html" class="logo">Lavara Wellness</a>
+        <nav class="desktop-nav">
+        </nav>
+        <button class="join-button">Join us!</button> 
     </header>
-    <main>
-        <div id="blogPostContainer">
+    <div id="joinPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-button" aria-label="Close join popup">×</button>
+            <h3 class="popup-heading">Welcome! Choose an option</h3>
+            <button class="login-button">Login</button>
+            <a href="../HTML/account.html">
+                <button class="register-button">Register</button>
+            </a>
         </div>
+    </div>
+    <main>
+        <article>
+            <h2 class="post-title"></h2> 
+            <p class="post-date"></p> 
+            
+            <div class="post-image">
+                <img src="" alt="Blog post image" /> 
+            </div>
+            <div class="post-content">
+            </div>
+        </article>
     </main>
+    <footer>
+        <p>Please sign up to our newsletter!</p>
+        <div class="newsletter-signup">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <a href="../HTML/newsletter.html">
+                <button class="signup-button">Sign up</button>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

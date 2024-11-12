@@ -1,4 +1,3 @@
-/* General Spacing Adjustments */
 .carousel-section {
     padding: 30px 0;
     margin-bottom: 50px;
@@ -25,7 +24,6 @@
     margin-bottom: 30px;
 }
 
-/* Carousel container styles */
 .carousel {
     position: relative;
     width: 90vw;
@@ -66,7 +64,6 @@
     transition: opacity 0.3s ease;
 }
 
-/* Hover effect for desktop */
 @media (min-width: 769px) {
     .carousel-item:hover .rounded-image {
         filter: blur(4px) brightness(0.7);
@@ -77,7 +74,6 @@
     }
 }
 
-/* Show overlay by default on mobile */
 @media (max-width: 768px) {
     .carousel-item .rounded-image {
         filter: blur(4px) brightness(0.7);
@@ -87,13 +83,11 @@
         opacity: 1;
     }
 
-    /* Hide navigation arrows on mobile */
     .carousel-control {
         display: none;
     }
 }
 
-/* Navigation button styling */
 .carousel-control {
     position: absolute;
     top: 50%;
@@ -121,7 +115,6 @@
     right: 15px;
 }
 
-/* Thumbnail grid styling */
 .container {
     display: flex;
     justify-content: center;
