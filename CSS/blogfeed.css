@@ -7,7 +7,7 @@
     padding: 0 20px; 
     background-color: #3D4435; 
     border-radius: 8px; 
-    max-width: 900px; 
+ 
 }
 
 .post-title {
@@ -58,18 +58,28 @@
 
 .text-container {
     width: 100%; 
-    max-width: 1400px; 
+    max-width: 1300px; 
     margin: 0 auto; 
     padding: 0 20px; 
 }
 
 .centered-text {
-    text-align: center; 
-    font-size: 22px; 
+    text-align: left; 
+    font-size: 22px;
     line-height: 1.8; 
     color: #EDE8E1; 
-    margin: 20px 0; 
-    padding: 0 20px; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    padding: 0 20px;
+    max-width: 1200px; 
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.page-title {
+    margin-bottom: 30px; 
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -78,7 +88,7 @@
         line-height: 1.6; 
         padding: 0 15px; 
         margin: 20px; 
-        width: 100%;
+        width: 100%; 
         max-width: none; 
     }
 }
