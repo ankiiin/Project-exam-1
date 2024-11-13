@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavara Wellness - Blog Post</title>
-    <link rel="stylesheet" href="../CSS/main.css"> 
-    <script src="../JS/main.js" defer></script> 
-    <script src="../JS/fetchData.js" type="module" defer></script> 
-    <script src="../JS/blogpost.js" type="module" defer></script> 
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lavara Wellness - Blog Post</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/main.css"> 
+        <link rel="stylesheet" href="../CSS/blogpost.css">
+        <script src="../JS/main.js" defer></script> 
+        <script src="../JS/fetchData.js" type="module" defer></script> 
+        <script src="../JS/blogpost.js" type="module" defer></script> 
+    </head>
 <body>
     <header>
-        <a href="../HTML/index.html" class="logo">Lavara Wellness</a>
+        <a href="../HTML/index.html" class="responsive-logo-link">
+            <h1 class="responsive-logo">Lavara Wellness</h1>
+        </a>
         <nav class="desktop-nav">
+            <a href="javascript:void(0)" class="nav-text join-button">Join us!</a>
         </nav>
-        <button class="join-button">Join us!</button> 
     </header>
     <div id="joinPopup" class="popup">
         <div class="popup-content">
@@ -30,7 +34,7 @@
         <article>
             <h2 class="post-title"></h2> 
             <p class="post-date"></p> 
-            
+            <hr class="post-date-line"> 
             <div class="post-image">
                 <img src="" alt="Blog post image" /> 
             </div>

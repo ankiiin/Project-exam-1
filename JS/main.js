@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const joinButton = document.querySelector(".join-button");
-    const joinPopup = document.getElementById("joinPopup");
-    const closeJoinPopup = document.querySelector("#joinPopup .close-button");
+    const joinButton = document.querySelector(".join-button"); 
+    const joinPopup = document.getElementById("joinPopup"); 
+    const closeJoinPopup = document.querySelector("#joinPopup .close-button"); 
 
     if (joinButton && joinPopup && closeJoinPopup) {
         joinButton.addEventListener("click", () => {
@@ -19,8 +19,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    window.navigateToPosts = function() {
-        window.location.href = "../HTML/posts.html";
-    };
 });

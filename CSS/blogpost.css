@@ -1,51 +1,108 @@
-article {
-    max-width: 700px;
+.post-content {
+    font-family: 'Montserrat', sans-serif; 
+    line-height: 1.8; 
+    font-size: 18px; 
+    color: #EDE8E1; 
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px; 
+    background-color: #3D4435; 
+    border-radius: 8px; 
+    max-width: 900px; 
 }
 
 .post-title {
+    margin-bottom: 70px;
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 40px; 
     color: #EDE8E1;
+    font-weight: bold;
 }
 
 .post-date {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
+    text-align: left; 
+    font-size: 18px;
+    color: #EDE8E1;
+    margin-bottom: 30px; 
+}
+
+.post-date-line {
+    margin: 70px 0;
+    border: 0;
+    border-top: 2px solid #EDE8E1; 
+    margin: 20px 0;
 }
 
 .post-image {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 70px; 
 }
 
-.post-image img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
+.post-content::after {
+    margin-bottom: 70px;
+    content: "";
+    display: block;
+    border-top: 2px solid #EDE8E1;
+    margin-top: 20px;
 }
-
-.post-content {
-    line-height: 1.6;
-    color: #EDE8E1;
-}
-
-.post-content p {
-    margin-bottom: 15px;
-}
-
-
-.back-button {
-    display: none; 
-}
-
 
 @media (max-width: 768px) {
-    .back-button {
-        display: none;
+    .post-content {
+        font-size: 16px; 
+        padding: 0 15px; 
+        margin: 10px; 
+        max-width: 100%; 
+    }
+
+    .post-title {
+        font-size: 28px; 
+    }
+
+    .post-date {
+        font-size: 16px; 
+    }
+
+    .post-image {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .post-image img {
+        width: 100%; 
+        height: auto; 
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .post-content p {
+        margin-bottom: 15px; 
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .post-content {
+        font-size: 17px; 
+        padding: 0 20px; 
+        margin: 15px auto; 
+    }
+
+    .post-title {
+        font-size: 30px; 
+    }
+
+    .post-date {
+        font-size: 17px; 
+    }
+
+    .post-content p {
+        margin-bottom: 20px;
+    }
+
+    .post-image img {
+        width: 100%;
+        height: auto; 
+        object-fit: cover;
+        border-radius: 8px;
     }
 }

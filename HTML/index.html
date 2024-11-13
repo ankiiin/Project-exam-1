@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lavara Wellness - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/blogfeed.css">
     <script src="../JS/main.js" defer></script>
@@ -15,9 +16,19 @@
             <h1 class="responsive-logo">Lavara Wellness</h1>
         </a>
         <nav class="desktop-nav">
-            <a href="../HTML/newsletter.html" class="nav-text">Join us!</a>
+            <a href="javascript:void(0)" class="nav-text join-button">Join us!</a>
         </nav>
     </header>
+    <div id="joinPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-button" aria-label="Close join popup">×</button>
+            <h3 class="popup-heading">Welcome! Choose an option</h3>
+            <button class="login-button">Login</button>
+            <a href="../HTML/account.html">
+                <button class="register-button">Register</button>
+            </a>
+        </div>
+    </div>
     <main>
         <div class="carousel-section">
             <div class="carousel">
@@ -29,9 +40,12 @@
         </div>
         <hr class="section-divider">
         <h2 class="page-title">Welcome to Lavara Wellness</h2>
-        <p class="centered-text">
-            At Lavara Wellness, we believe in embracing a healthier lifestyle through nourishing food, mindful practices, and holistic care. Here, you'll find inspiration on everything from delicious and wholesome recipes to meditation tips, skincare routines, and wellness advice. Whether you're looking to elevate your meals or find balance in your day-to-day, Lavara Wellness is your space to explore and nurture both body and mind. Dive in, and let's embark on this journey to better living, together!
-        </p>
+        <div class="text-container">
+            <p class="centered-text">
+                At Lavara Wellness, we believe in embracing a healthier lifestyle through nourishing food, mindful practices, and holistic care. Here, you'll find inspiration on everything from delicious and wholesome recipes to meditation tips, skincare routines, and wellness advice.
+                Whether you're looking to elevate your meals or find balance in your day-to-day, Lavara Wellness is your space to explore and nurture both body and mind. Dive in, and let's embark on this journey to better living, together!
+            </p>
+        </div>
         <hr class="section-divider">
         <h3 class="latest-posts-title">Latest Posts</h3>
         <div class="container">

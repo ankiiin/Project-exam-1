@@ -23,7 +23,7 @@ header {
 }
 
 .logo, .responsive-logo-link, .responsive-logo {
-    font-size: 3rem !important; 
+    font-size: 3rem !important;
     text-align: center;
     color: #EDE8E1;
     text-decoration: none;
@@ -31,7 +31,7 @@ header {
 }
 
 header h1 {
-    font-size: 28px !important; 
+    font-size: 28px !important;
     text-align: center;
     margin-bottom: 10px;
     color: #EDE8E1;
@@ -45,58 +45,19 @@ header h1 {
 }
 
 .join-button {
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    background-color: #EDE8E1;
-    color: #000000;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
+    background: none; 
+    color: #EDE8E1; 
+    border: none; 
     font-weight: bold;
+    font-size: 18px;
     cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none; 
 }
 
-.hamburger-menu {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        left: 20px;
-        top: 30px;
-        cursor: pointer;
-        width: 30px; 
-        height: 24px;
-    }
-
-    .hamburger-bar {
-        width: 100%;
-        height: 3px;
-        background-color: #EDE8E1;
-        margin: 4px 0; 
-    }
-
-    .desktop-nav, .join-button {
-        display: none;
-    }
-
-    .logo, .responsive-logo {
-        font-size: 2.5rem; 
-    }
-
-    main {
-        padding: 0 20px;
-    }
-}
-
-button, .hamburger-menu, .blog-button, .hamburger-join-button, .nav-text, a {
-    cursor: pointer;
+.join-button:hover {
+    background: none;
+    color: #EDE8E1;
 }
 
 main {
@@ -131,45 +92,6 @@ main h2 {
     margin: 30px auto; 
     border: none;
     border-top: 2px solid #EDE8E1; 
-}
-
-
-footer {
-    background-color: #A1A69A;
-    padding: 20px 15px;
-    width: 100%;
-    text-align: center;
-    margin-top: auto;
-}
-
-footer p {
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.newsletter-signup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.newsletter-signup input[type="email"] {
-    padding: 5px;
-    border-radius: 20px;
-    border: none;
-    width: 200px;
-}
-
-.newsletter-signup button {
-    background-color: #A8D5BA;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .popup {
@@ -211,7 +133,7 @@ footer p {
     margin-bottom: 20px;
 }
 
-.login-button, .register-button, .hamburger-join-button, .blog-button {
+.login-button, .register-button {
     background-color: #8AA784;
     border: none;
     padding: 12px 20px;
@@ -223,46 +145,45 @@ footer p {
     transition: background-color 0.3s;
 }
 
-.login-button:hover, .register-button:hover, .hamburger-join-button:hover, .blog-button:hover {
+.login-button:hover, .register-button:hover {
     background-color: #6f9a67;
 }
 
-.registration-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #3D4435;
-    border-radius: 10px;
+footer {
+    background-color: #A1A69A;
+    padding: 20px 15px;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
 }
 
-.registration-form label {
-    color: #EDE8E1;
+footer p {
+    color: #000000;
     font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.newsletter-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     margin-top: 10px;
 }
 
-.registration-form input[type="text"],
-.registration-form input[type="email"],
-.registration-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #A1A69A;
-    border-radius: 5px;
+.newsletter-signup input[type="email"] {
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
 }
 
-.signup-button {
-    width: 100%;
+.newsletter-signup button {
     background-color: #A8D5BA;
-    color: black;
-    font-weight: bold;
-    padding: 10px 15px;
     border: none;
+    padding: 5px 10px;
     border-radius: 20px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -276,5 +197,5 @@ footer p {
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    z-index: 20; 
+    z-index: 20;
 }
