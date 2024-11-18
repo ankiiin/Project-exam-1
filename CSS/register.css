@@ -1,0 +1,70 @@
+.register-form {
+    background-color: #3D4435; /* Grønn bakgrunn for registreringsskjemaet */
+    padding: 40px; /* Økt padding for mer luft rundt skjemaet */
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; /* Sentrere skjemaet på siden */
+}
+
+.text-container {
+    margin-bottom: 30px; /* Økt avstand mellom tittel og skjema */
+}
+
+h1 {
+    font-size: 28px; /* Økt skriftstørrelse for mer lesbarhet */
+    margin-bottom: 15px; /* Økt avstand mellom overskrift og beskrivelse */
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 40px; /* Mer avstand mellom beskrivelse og skjema */
+}
+
+.input-group {
+    margin-bottom: 25px; /* Økt margin mellom input-feltene */
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px; /* Mer avstand mellom etikett og tekstboks */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px; /* Økt padding for tekstboksene for bedre brukervennlighet */
+    font-size: 16px;
+    border: 1px solid #3D4435; /* Grønn kant rundt tekstboksene */
+    border-radius: 8px; /* Hjørneradius */
+    background-color: #EDE8E1; /* Lys beige bakgrunn for tekstboksene */
+    color: #3D4435; /* Grønn tekstfarge i boksene */
+}
+
+/* Knappestil for "Sign up!" knappen med ønsket bakgrunnsfarge */
+.sign-up-button {
+    background-color: #8AA784; /* Ønsket grønnfarge */
+    color: #EDE8E1;
+    font-size: 16px;
+    padding: 14px 20px; /* Økt padding på knappen */
+    border: none;
+    border-radius: 12px; /* Hjørneradius */
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px; /* Økt avstand mellom skjema og knapp */
+}
+
+.sign-up-button:hover {
+    background-color: #A1B88D; /* Lysere grønnfarge på hover, penere effekt */
+    color: #EDE8E1;
+}
+
+.error-message {
+    color: red;
+    display: none; /* Skjuler feilmeldingen som standard */
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Økt avstand før og etter feilmelding */
+}
