@@ -1,4 +1,4 @@
-const token = "your-token-here";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5raWlpbiIsImVtYWlsIjoiYW5uaGFtNDkzNDRAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzA4MDI2Nzl9.a0NCLC25IYwiNwdII0_kJNjmO7g4JNsZUukkgnMWC9E";
 
 async function fetchCarouselPosts() {
     try {
@@ -6,7 +6,7 @@ async function fetchCarouselPosts() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}` 
             }
         });
 
@@ -24,7 +24,7 @@ async function fetchCarouselPosts() {
 
 function displayCarouselPosts(posts) {
     const carouselContainer = document.querySelector('.carousel-images');
-    carouselContainer.innerHTML = ''; 
+    carouselContainer.innerHTML = ''; // Tøm karusellen
 
     posts.forEach(post => {
         const carouselItem = document.createElement('div');
@@ -103,14 +103,12 @@ async function fetchBlogPosts() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}` 
             }
         });
-
         if (!response.ok) {
             throw new Error('Failed to fetch blog posts');
         }
-
         const data = await response.json();
         return data.data; 
     } catch (error) {
@@ -122,18 +120,15 @@ async function fetchBlogPosts() {
 async function displayBlogPosts() {
     const posts = await fetchBlogPosts();
     const postGrid = document.getElementById('postGrid');
-
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.classList.add('thumbnail');
-
         postElement.innerHTML = `
             <img src="${post.media.url}" alt="${post.media.alt || 'Blog image'}">
             <div class="overlay">${post.title}</div>
         `;
-
         postElement.addEventListener('click', () => {
-            window.location.href = `blogpost.html?id=${post.id}`;
+            window.location.href = `HTML/blogpost.html?id=${post.id}`; 
         });
 
         postGrid.appendChild(postElement);
@@ -141,10 +136,9 @@ async function displayBlogPosts() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    displayBlogPosts();
-    fetchCarouselPosts();
+    displayBlogPosts(); 
+    fetchCarouselPosts(); 
 });
-
 window.addEventListener("resize", () => {
     const carouselContainer = document.querySelector('.carousel-images');
     const offset = -currentIndex * document.querySelector('.carousel-item').offsetWidth;

@@ -200,3 +200,19 @@ footer p {
     align-items: center;
     z-index: 20;
 }
+
+.logout-button {
+    background-color: #8AA784;  
+    color: #FFFFFF; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; 
+}
+
+.logout-button:hover {
+    background-color: #8AA784;
+}

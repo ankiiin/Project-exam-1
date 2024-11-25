@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lavara Wellness - Edit Posts</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../CSS/edit.css">
-<script src="../JS/edit.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavara Wellness - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/edit.css">
+    <script src="../JS/main.js" defer></script>
+    <script src="../JS/edit.js" defer></script>
 </head>
 <body>
-<header>
-<a href="/index.html" class="responsive-logo-link">
-<h1 class="responsive-logo">Lavara Wellness</h1>
-</a>
-<nav class="desktop-nav">
-<a href="javascript:void(0)" class="nav-text join-button">Join us!</a>
-</nav>
-</header>
-<div id="joinPopup" class="popup">
-<div class="popup-content">
-<button class="close-button" aria-label="Close join popup">×</button>
-<h3 class="popup-heading">Welcome! Choose an option</h3>
-<a href="../HTML/login.html" class="login-button">Login</a>
-<a href="../HTML/register.html" class="register-button">Register</a>
-</div>
-</div>
-<main>
-<section class="header-section">
-<h2>Edit and Update Your Blog Content</h2>
-<hr>
-<div class="new-post-section">
-<p>Want to Share Something New?</p>
-<p>Create a fresh blog post and share your latest thoughts, tips, or experiences with your audience.</p>
-<button class="add-post-button">Add new post</button>
-</div>
-<hr>
-</section>
-<section class="edit-posts-section">
-<h3>Edit posts:</h3>
-<div class="post-list">
-<div class="post-item">
-<img src="image1.jpg" alt="Post Image">
-<div class="post-info">
-<h4>Nourish Your Soul: Creating a Wellness Routine That Sticks</h4>
-<button class="edit-button">Edit</button>
-<button class="delete-button">Delete</button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<p>Please sign up to our newsletter!</p>
-<div class="newsletter-signup">
-<input type="email" placeholder="Email address" aria-label="Email address">
-<a href="../HTML/newsletter.html" class="signup-button">Sign up</a>
-</div>
-</footer>
+    <header>
+        <a href="../index.html" class="responsive-logo-link">
+            <h1 class="responsive-logo">Lavara Wellness</h1>
+        </a>
+        <nav class="desktop-nav">
+            <a href="javascript:void(0)" class="nav-text join-button">
+                <span id="username-display">Join us!</span>
+            </a>
+            <button id="edit-button" class="logout-button" style="display:none;">Edit</button>
+            <button id="logout-button" class="logout-button" style="display:none;">Log out</button>
+        </nav> 
+    </header>
+    <div id="joinPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-button" aria-label="Close join popup">×</button>
+            <h3 class="popup-heading">Welcome! Choose an option</h3>
+            <a href="../HTML/login.html">
+                <button class="login-button">Login</button>
+            </a>
+            <a href="../HTML/register.html">
+                <button class="register-button">Register</button>
+            </a>
+        </div>
+    </div>
+    <main>
+        <section class="header-section">
+            <h2>Edit and Update Your Blog Content</h2>
+            <hr>
+            <div class="new-post-section">
+                <p>Want to Share Something New?</p>
+                <p>Create a fresh blog post and share your latest thoughts, tips, or experiences with your audience.</p>
+                <button class="add-post-button">Add new post</button>
+            </div>
+            <hr>
+        </section>
+        <section class="edit-posts-section">
+            <h3>Edit posts:</h3>
+            <div class="post-list">
+                <div class="post-item">
+                    <img src="image1.jpg" alt="Post Image">
+                    <div class="post-info">
+                        <h4>Nourish Your Soul: Creating a Wellness Routine That Sticks</h4>
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Please sign up to our newsletter!</p>
+        <div class="newsletter-signup">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <a href="../HTML/newsletter.html">
+                <button class="signup-button">Sign up</button>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

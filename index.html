@@ -16,7 +16,11 @@
             <h1 class="responsive-logo">Lavara Wellness</h1>
         </a>
         <nav class="desktop-nav">
-            <a href="javascript:void(0)" class="nav-text join-button">Join us!</a>
+            <a href="javascript:void(0)" class="nav-text join-button">
+                <span id="username-display">Join us!</span>
+            </a>
+            <button id="edit-button" class="logout-button" style="display:none;">Edit</button>
+            <button id="logout-button" class="logout-button" style="display:none;">Log out</button>
         </nav>
     </header>
     <div id="joinPopup" class="popup">
@@ -34,8 +38,7 @@
     <main>
         <div class="carousel-section">
             <div class="carousel">
-                <div class="carousel-images">
-                </div>
+                <div class="carousel-images"></div>
                 <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
                 <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
             </div>
