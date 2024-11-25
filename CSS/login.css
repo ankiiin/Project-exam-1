@@ -1,4 +1,4 @@
-.register-form {
+.login-container {
     padding: 40px; 
     border-radius: 8px;
     text-align: center;
@@ -14,37 +14,40 @@
 h1 {
     font-size: 28px; 
     margin-bottom: 15px; 
+    color: #FFFFFF; 
 }
 
 p {
     font-size: 16px;
     margin-bottom: 40px; 
+    color: #FFFFFF; 
 }
 
 .input-group {
     margin-bottom: 25px; 
-    text-align: left;
+    text-align: left; 
 }
 
 .input-group label {
     font-weight: bold;
     display: block;
     margin-bottom: 10px; 
+    color: #FFFFFF; 
 }
 
 .input-group input {
     width: 100%;
-    padding: 14px; 
+    padding: 14px;
     font-size: 16px;
     border: 1px solid #3D4435; 
-    border-radius: 8px; 
+    border-radius: 8px;
     background-color: #EDE8E1; 
-    color: #3D4435;
+    color: #3D4435; 
 }
 
-.sign-up-button {
+#loginButton {
     background-color: #8AA784; 
-    color: #EDE8E1;
+    color: #EDE8E1; 
     font-size: 16px;
     padding: 14px 20px; 
     border: none;
@@ -54,7 +57,7 @@ p {
     margin-top: 20px;
 }
 
-.sign-up-button:hover {
+#loginButton:hover {
     background-color: #A1B88D; 
     color: #EDE8E1;
 }
@@ -64,5 +67,14 @@ p {
     display: none; 
     font-size: 14px;
     margin-top: 20px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-message.show {
+    display: block;
+    padding: 10px;
+    background-color: #f8d7da; 
+    border: 1px solid #f5c6cb; 
+    border-radius: 5px;
 }

@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <a href="../HTML/index.html" class="responsive-logo-link">
+        <a href="/index.html" class="responsive-logo-link">
             <h1 class="responsive-logo">Lavara Wellness</h1>
         </a>
         <nav class="desktop-nav">
@@ -23,7 +23,9 @@
         <div class="popup-content">
             <button class="close-button" aria-label="Close join popup">×</button>
             <h3 class="popup-heading">Welcome! Choose an option</h3>
-            <button class="login-button">Login</button>
+            <a href="../HTML/login.html">
+                <button class="login-button">Login</button>
+            </a>
             <a href="../HTML/register.html">
                 <button class="register-button">Register</button>
             </a>
@@ -35,27 +37,18 @@
                 <h1>Start Your Wellness Journey Today</h1>
                 <p>Sign up to enjoy exclusive content on mindfulness, healthy living, and self-care.</p>
             </div>
-
             <form id="registerForm">
                 <div class="input-group">
-                    <label for="firstName">First name</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="input-group">
-                    <label for="lastName">Last name</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                <div class="input-group">
                     <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="sign-up-button">Sign up!</button>
+                <button type="submit" class="sign-up-button" id="sign-up-button">Sign up!</button>
             </form>
-
+                      
             <p id="errorMessage" class="error-message">Please fill in all fields correctly.</p>
         </section>
     </main>

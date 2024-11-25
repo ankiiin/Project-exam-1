@@ -143,6 +143,7 @@ main h2 {
     width: 100%;
     color: #FFFFFF;
     transition: background-color 0.3s;
+    cursor: pointer; 
 }
 
 .login-button:hover, .register-button:hover {

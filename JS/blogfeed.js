@@ -24,7 +24,7 @@ async function fetchCarouselPosts() {
 
 function displayCarouselPosts(posts) {
     const carouselContainer = document.querySelector('.carousel-images');
-    carouselContainer.innerHTML = ''; // Clear any placeholder content
+    carouselContainer.innerHTML = ''; 
 
     posts.forEach(post => {
         const carouselItem = document.createElement('div');
@@ -151,4 +151,10 @@ window.addEventListener("resize", () => {
     carouselContainer.style.transition = "none";
     carouselContainer.style.transform = `translateX(${offset}px)`;
 });
+
+function logOut() {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userRole');
+    window.location.href = "/index.html";
+}
 
