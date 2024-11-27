@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loggedInUser = localStorage.getItem("username");
 
+
     if (loggedInUser) {
         usernameDisplay.style.display = "none";  
         editButton.style.display = "inline-block"; 
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             usernameDisplay.style.display = "inline-block"; 
             editButton.style.display = "none";
             logoutButton.style.display = "none"; 
+            window.location.href = "/index.html";
         });
     }
 
@@ -46,9 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (editButton) {
         editButton.addEventListener("click", () => {
             if (loggedInUser) {
-                window.location.href = "post/edit.html"; 
+                window.location.href = "../post/edit.html"; 
             }
         });
     }
-
 });

@@ -1,44 +1,41 @@
-async function fetchBlogPosts() {
-    try {
-        const response = await fetch('https://v2.api.noroff.dev/blog/posts', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}` 
-            }
-        });
+import { fetchPosts } from './fetchData.js'; 
 
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Fetched Blog Posts:', data);
-            displayBlogPosts(data); 
-        } else {
-            console.error('Failed to fetch blog posts:', response.status);
-        }
-    } catch (error) {
-        console.error('Error fetching blog posts:', error);
+export function displayBlogPosts(posts) {
+    const postList = document.querySelector('.post-list');
+    postList.innerHTML = ''; 
+
+    if (posts && posts.data && Array.isArray(posts.data)) {
+        posts = posts.data; 
+    } else {
+        console.warn("Posts is not an array. Posts data is either missing or not formatted correctly.");
+        posts = []; 
     }
-}
 
-function displayBlogPosts(posts) {
-    const postList = document.querySelector('.post-list'); 
+    console.log('Displaying posts:', posts);  
 
-    postList.innerHTML = '';
+    if (posts.length === 0) {
+        console.log('No posts available');  
+        postList.innerHTML = "<p>No posts available.</p>";
+        return;
+    }
 
     posts.forEach(post => {
         const postItem = document.createElement('div');
         postItem.classList.add('post-item');
+        
         postItem.innerHTML = `
-            <img src="${post.media?.url || 'default.jpg'}" alt="${post.media?.alt || 'Post Image'}">
-            <div class="post-info">
-                <h4>${post.title}</h4>
-                <button class="edit-button" data-id="${post.id}">Edit</button>
-                <button class="delete-button" data-id="${post.id}">Delete</button>
+            <div class="post-content">
+                <img src="${post.media?.url || 'https://via.placeholder.com/150'}" alt="${post.media?.alt || 'Post Image'}" class="post-image">
+                <h3>${post.title}</h3> 
             </div>
+                <div class="post-actions">
+                    <button class="edit-button" data-id="${post.id}">Edit</button>
+                    <button class="delete-button" data-id="${post.id}">Delete</button>
+                </div>
         `;
-        postList.appendChild(postItem);
+        postList.appendChild(postItem); 
     });
-    addEventListenersToButtons();
+    addEventListenersToButtons(); 
 }
 
 function addEventListenersToButtons() {
@@ -48,6 +45,7 @@ function addEventListenersToButtons() {
         button.addEventListener('click', async (event) => {
             const postId = event.target.dataset.id; 
             console.log(`Editing post with ID: ${postId}`);
+            window.location.href = `../post/edit.html?id=${postId}`; 
         });
     });
 
@@ -67,13 +65,13 @@ async function deletePost(postId) {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}` 
             }
         });
 
         if (response.ok) {
-            console.log('Post deleted:', postId);
-            fetchBlogPosts();
+            console.log(`Post with ID ${postId} deleted.`);
+            fetchPosts(); 
         } else {
             console.error('Failed to delete post:', response.status);
         }
@@ -82,6 +80,8 @@ async function deletePost(postId) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    fetchBlogPosts(); 
+document.addEventListener('DOMContentLoaded', async () => {
+    const posts = await fetchPosts(); 
+    console.log('Fetched posts:', posts);  
+    displayBlogPosts(posts); 
 });
