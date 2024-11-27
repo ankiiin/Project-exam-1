@@ -24,7 +24,7 @@ async function fetchCarouselPosts() {
 
 function displayCarouselPosts(posts) {
     const carouselContainer = document.querySelector('.carousel-images');
-    carouselContainer.innerHTML = ''; // Tøm karusellen
+    carouselContainer.innerHTML = ''; // Clear carousel
 
     posts.forEach(post => {
         const carouselItem = document.createElement('div');
@@ -120,6 +120,8 @@ async function fetchBlogPosts() {
 async function displayBlogPosts() {
     const posts = await fetchBlogPosts();
     const postGrid = document.getElementById('postGrid');
+    postGrid.innerHTML = '';  
+
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.classList.add('thumbnail');
@@ -135,10 +137,53 @@ async function displayBlogPosts() {
     });
 }
 
+async function handleNewPost() {
+    document.getElementById('post-form').addEventListener('submit', async (event) => {
+        event.preventDefault();  // Prevent default form submission
+        const title = document.getElementById('post-title').value;
+        const text = document.getElementById('post-text').value;
+        const imageUrl = document.getElementById('post-image').value;
+
+        const newPost = {
+            title: title,
+            text: text,
+            media: { url: imageUrl || 'https://via.placeholder.com/150' }
+        };
+
+        await createPost(newPost);
+
+        const posts = await fetchBlogPosts();
+        displayBlogPosts(posts);  
+    });
+}
+
+async function createPost(postData) {
+    try {
+        const response = await fetch('https://v2.api.noroff.dev/blog/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(postData)
+        });
+
+        if (response.ok) {
+            console.log('Post created successfully');
+        } else {
+            console.error('Failed to create post:', response.status);
+        }
+    } catch (error) {
+        console.error('Error creating post:', error);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    displayBlogPosts(); 
-    fetchCarouselPosts(); 
+    displayBlogPosts();  
+    fetchCarouselPosts();  
+    handleNewPost();  
 });
+
 window.addEventListener("resize", () => {
     const carouselContainer = document.querySelector('.carousel-images');
     const offset = -currentIndex * document.querySelector('.carousel-item').offsetWidth;

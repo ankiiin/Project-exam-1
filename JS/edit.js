@@ -28,10 +28,10 @@ export function displayBlogPosts(posts) {
                 <img src="${post.media?.url || 'https://via.placeholder.com/150'}" alt="${post.media?.alt || 'Post Image'}" class="post-image">
                 <h3>${post.title}</h3> 
             </div>
-                <div class="post-actions">
-                    <button class="edit-button" data-id="${post.id}">Edit</button>
-                    <button class="delete-button" data-id="${post.id}">Delete</button>
-                </div>
+            <div class="post-actions">
+                <button class="edit-button" data-id="${post.id}">Edit</button>
+                <button class="delete-button" data-id="${post.id}">Delete</button>
+            </div>
         `;
         postList.appendChild(postItem); 
     });
@@ -77,6 +77,66 @@ async function deletePost(postId) {
         }
     } catch (error) {
         console.error('Error deleting post:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addPostButton = document.querySelector('.add-post-button');
+    const popupOverlay = document.getElementById('popup-overlay');
+    const closePopupButton = document.getElementById('close-popup');
+    const postForm = document.getElementById('post-form');
+
+    addPostButton.addEventListener('click', () => {
+        popupOverlay.style.display = 'flex';  
+    });
+
+    closePopupButton.addEventListener('click', () => {
+        popupOverlay.style.display = 'none';  
+    });
+
+    popupOverlay.addEventListener('click', (event) => {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = 'none'; 
+        }
+    });
+
+    postForm.addEventListener('submit', async (event) => {
+        event.preventDefault();  
+        const title = document.getElementById('post-title').value;
+        const text = document.getElementById('post-text').value;
+        const imageUrl = document.getElementById('post-image').value;
+
+        // Create new post object
+        const newPost = {
+            title: title,
+            text: text,
+            media: { url: imageUrl || 'https://via.placeholder.com/150' }
+        };
+
+        await createPost(newPost);
+        popupOverlay.style.display = 'none';
+        fetchPosts();
+    });
+});
+
+async function createPost(post) {
+    try {
+        const response = await fetch('https://v2.api.noroff.dev/blog/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(post)
+        });
+
+        if (response.ok) {
+            console.log('Post created successfully');
+        } else {
+            console.error('Failed to create post:', response.status);
+        }
+    } catch (error) {
+        console.error('Error creating post:', error);
     }
 }
 
