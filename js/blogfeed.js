@@ -2,6 +2,9 @@ import { getUsername } from "../js/utils/storage.js";
 
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5raWlpbiIsImVtYWlsIjoiYW5uaGFtNDkzNDRAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzA4MDI2Nzl9.a0NCLC25IYwiNwdII0_kJNjmO7g4JNsZUukkgnMWC9E";
 
+let currentIndex = 1; // Global current index for carousel
+let isTransitioning = false; // Flag to prevent multiple clicks during transition
+
 async function fetchCarouselPosts() {
     const username = getUsername();
     
@@ -29,7 +32,7 @@ async function fetchCarouselPosts() {
 
 function displayCarouselPosts(posts) {
     const carouselContainer = document.querySelector('.carousel-images');
-    carouselContainer.innerHTML = ''; 
+    carouselContainer.innerHTML = '';  // Clear previous content
 
     posts.forEach(post => {
         const carouselItem = document.createElement('div');
@@ -54,53 +57,77 @@ function displayCarouselPosts(posts) {
         carouselContainer.appendChild(carouselItem);
     });
 
+    // Clone the first and last items to allow infinite looping
     const firstClone = carouselContainer.firstElementChild.cloneNode(true);
     const lastClone = carouselContainer.lastElementChild.cloneNode(true);
     carouselContainer.appendChild(firstClone);
     carouselContainer.insertBefore(lastClone, carouselContainer.firstElementChild);
 
+    // Reset to second item
     currentIndex = 1;
     showSlide(currentIndex);
 }
-
-let currentIndex = 1;
-let isTransitioning = false;
 
 function showSlide(index) {
     const carouselContainer = document.querySelector('.carousel-images');
     const slides = document.querySelectorAll('.carousel-item');
     const offset = -index * slides[0].offsetWidth;
 
-    carouselContainer.style.transition = isTransitioning ? "transform 0.5s ease" : "none";
+    // Prevent transition interruptions
+    if (isTransitioning) return;
+
+    isTransitioning = true; // Lock transition
+
+    carouselContainer.style.transition = "transform 0.5s ease";
     carouselContainer.style.transform = `translateX(${offset}px)`;
 
+    // Once transition is done, allow the next click
     carouselContainer.addEventListener("transitionend", () => {
+        isTransitioning = false; // Unlock transition
+
         if (index === slides.length - 1) {
+            // Reset position after the last item
             carouselContainer.style.transition = "none";
             currentIndex = 1;
             carouselContainer.style.transform = `translateX(${-currentIndex * slides[0].offsetWidth}px)`;
-        } else if (index === 0) {
-            carouselContainer.style.transition = "none";
-            currentIndex = slides.length - 2;
-            carouselContainer.style.transform = `translateX(${-currentIndex * slides[0].offsetWidth}px)`;
         }
-        isTransitioning = false;
-    }, { once: true });
+    });
 }
 
+// Handle next and previous slide events
 function nextSlide() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex++;
+    const slides = document.querySelectorAll('.carousel-item');
+    const maxIndex = slides.length - 2; // Ignore cloned item
+
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Loop back to the start
+    }
+
     showSlide(currentIndex);
 }
 
 function prevSlide() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex--;
+    const slides = document.querySelectorAll('.carousel-item');
+    const maxIndex = slides.length - 2;
+
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = maxIndex - 1; // Loop back to the end
+    }
+
     showSlide(currentIndex);
 }
+
+// Initialize carousel after fetching posts
+fetchCarouselPosts();
+
+// Event listeners for carousel controls
+document.querySelector('.carousel-control.next').addEventListener('click', nextSlide);
+document.querySelector('.carousel-control.prev').addEventListener('click', prevSlide);
+
 
 async function fetchBlogPosts() {
     try {
@@ -201,4 +228,3 @@ function logOut() {
     localStorage.removeItem('userRole');
     window.location.href = "/index.html";
 }
-
