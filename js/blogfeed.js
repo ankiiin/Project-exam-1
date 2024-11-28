@@ -7,7 +7,7 @@ async function fetchCarouselPosts() {
     
     try {
         const response = await fetch(
-            `https://v2.api.noroff.dev/blog/posts/$(username)?limit=3`, {
+            `https://v2.api.noroff.dev/blog/posts/${username}?limit=3`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
