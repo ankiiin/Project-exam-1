@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavara Wellness - Home</title>
+    <title>Lavara Wellness - Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
     <script src="../js/main.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/login.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,18 +23,7 @@
             <button id="logout-button" class="logout-button" style="display:none;">Log out</button>
         </nav>
     </header>
-    <div id="joinPopup" class="popup">
-        <div class="popup-content">
-            <button class="close-button" aria-label="Close join popup">×</button>
-            <h3 class="popup-heading">Welcome! Choose an option</h3>
-            <a href="../html/login.html">
-                <button class="login-button">Login</button>
-            </a>
-            <a href="../html/register.html">
-                <button class="register-button">Register</button>
-            </a>
-        </div>
-    </div>
+
     <main>
         <div class="login-container">
             <h1>Login To Your Account</h1>
@@ -50,9 +39,10 @@
                 </div>
                 <button type="submit" id="loginButton">Login</button>
             </form>
-                <p id="errorMessage" class="error-message">Invalid email or password</p>
-            </div>
+            <p id="errorMessage" class="error-message" style="display: none;">Invalid email or password</p>
+        </div>
     </main>
+
     <footer>
         <p>Please sign up to our newsletter!</p>
         <div class="newsletter-signup">
