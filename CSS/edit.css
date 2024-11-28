@@ -52,6 +52,7 @@
     flex-direction: row;
     flex-grow: 1; 
 }
+
 .post-actions {
     display: flex;
     flex-direction: row;
@@ -96,21 +97,22 @@ hr {
     margin: 20px 0;
 }
 
+/* Popup Modal Styles */
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    display: none; 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
 .popup-content {
-    background-color: #EDE8E1; 
+    background-color: #EDE8E1;
     padding: 20px;
     border-radius: 10px;
     max-width: 500px;
@@ -119,7 +121,7 @@ hr {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    position: relative; 
+    position: relative;
 }
 
 .popup-content h2 {
@@ -152,5 +154,3 @@ hr {
     cursor: pointer;
     font-weight: bold;
 }
-
-
