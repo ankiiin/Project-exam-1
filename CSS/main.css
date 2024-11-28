@@ -44,21 +44,34 @@ header h1 {
     margin-top: 10px;
 }
 
-.join-button {
-    background: none; 
-    color: #EDE8E1; 
-    border: none; 
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 20px;
-    text-decoration: none; 
+.responsive-logo {
+    margin-bottom: 50px;  
 }
 
-.join-button:hover {
-    background: none;
-    color: #EDE8E1;
+.register-button {
+    background-color: #8AA784; 
+    color: #FFFFFF; 
+    border: none; 
+    padding: 10px 20px;  
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 40px;
+    font-size: 16px;
 }
+
+.register-button:hover {
+    background-color: #6f9a67;
+}
+
+#username-display {
+    color: #EDE8E1; 
+    font-size: 20px;  
+    margin-bottom: 10px; 
+}
+
+
 
 main {
     display: flex;
@@ -92,62 +105,6 @@ main h2 {
     margin: 30px auto; 
     border: none;
     border-top: 2px solid #EDE8E1; 
-}
-
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: #EDE8E1;
-    color: #3D4435;
-    padding: 30px 20px;
-    border-radius: 20px;
-    text-align: center;
-    width: 90%;
-    max-width: 300px;
-    position: relative;
-}
-
-.close-button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: #3D4435;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.popup-heading {
-    color: #000000;
-    margin-bottom: 20px;
-}
-
-.login-button, .register-button {
-    background-color: #8AA784;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin: 15px 0;
-    width: 100%;
-    color: #FFFFFF;
-    transition: background-color 0.3s;
-    cursor: pointer; 
-}
-
-.login-button:hover, .register-button:hover {
-    background-color: #6f9a67;
 }
 
 footer {
