@@ -66,3 +66,19 @@ p {
     margin-top: 20px;
     margin-bottom: 20px; 
 }
+
+.login-link {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #FFFFFF; 
+}
+
+.login-link .login-text {
+    text-decoration: underline;
+    color: #FFFFFF; 
+    cursor: pointer;
+}
+
+.login-link .login-text:hover {
+    color: #6f9a67; 
+}
