@@ -60,7 +60,7 @@ async function deletePost(postId) {
 
         if (response.ok) {
             console.log(`Post with ID ${postId} deleted.`);
-            fetchPosts(); // Refresh posts after deletion
+            fetchPosts(); 
         } else {
             console.error('Failed to delete post:', response.status);
         }
