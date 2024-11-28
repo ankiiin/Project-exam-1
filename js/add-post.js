@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const postForm = document.getElementById("post-form");
     const errorMessageElement = document.getElementById("errorMessage");
 
+
     if (addPostButton) {
         addPostButton.addEventListener("click", () => {
             popupOverlay.style.display = "flex";  
         });
     }
-
     if (closePopupButton) {
         closePopupButton.addEventListener("click", () => {
             popupOverlay.style.display = "none";  
@@ -25,11 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     postForm.addEventListener("submit", async (event) => {
         event.preventDefault();
+
         const title = document.getElementById("post-title").value;
         const body = document.getElementById("post-text").value;
         const imageUrl = document.getElementById("post-image").value;
         const tags = []; 
-        errorMessageElement.style.display = "none";  
+        errorMessageElement.style.display = "none"; 
         if (!title || !body) {
             errorMessageElement.style.display = "block";
             errorMessageElement.textContent = "Please fill in all fields.";
@@ -43,44 +44,47 @@ document.addEventListener("DOMContentLoaded", () => {
             media: { url: imageUrl || 'https://via.placeholder.com/150', alt: 'Post image' }
         };
 
-        try {
-            const accessToken = localStorage.getItem("accessToken");
-
-            if (!accessToken) {
-                errorMessageElement.style.display = "block";
-                errorMessageElement.textContent = "You must be logged in to create a post.";
-                return;
-            }
-
-            const userName = localStorage.getItem("username"); 
-
-            const response = await fetch(`https://v2.api.noroff.dev/blog/posts/${userName}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${accessToken}`
-                },
-                body: JSON.stringify(newPost)
-            });
-
-            if (response.ok) {
-                console.log("Post created successfully");
-                const posts = await fetchPosts(userName); 
-                displayBlogPosts(posts); 
-
-                popupOverlay.style.display = "none";
-            } else {
-                const errorData = await response.json();
-                errorMessageElement.style.display = "block";
-                errorMessageElement.textContent = `Post creation failed: ${errorData.message || 'Please try again.'}`;
-            }
-        } catch (error) {
-            console.error("Network Error:", error);
-            errorMessageElement.style.display = "block";
-            errorMessageElement.textContent = "A network error occurred. Please check your connection and try again.";
-        }
+        await createNewPost(newPost);
     });
 });
+
+async function createNewPost(newPost) {
+    const errorMessageElement = document.getElementById("errorMessage"); 
+    try {
+        const accessToken = localStorage.getItem("accessToken");
+        const userName = ""; 
+
+        console.log("Access Token:", accessToken);  
+        console.log("UserName (for URL):", userName);  
+        console.log("New Post Data:", newPost);  
+
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/${userName}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${accessToken}`
+            },
+            body: JSON.stringify(newPost)
+        });
+
+        if (response.ok) {
+            console.log("Post created successfully");
+            const posts = await fetchPosts(userName);
+            displayBlogPosts(posts); 
+
+            popupOverlay.style.display = "none";  
+        } else {
+            const errorData = await response.json();
+            console.error("Error details:", errorData);  
+            errorMessageElement.style.display = "block";
+            errorMessageElement.textContent = `Post creation failed: ${errorData.errors ? errorData.errors[0].message : 'Please try again.'}`;
+        }
+    } catch (error) {
+        console.error("Network Error:", error);
+        errorMessageElement.style.display = "block";
+        errorMessageElement.textContent = "A network error occurred. Please check your connection and try again.";
+    }
+}
 
 async function fetchPosts(userName) {
     try {
@@ -106,6 +110,7 @@ async function fetchPosts(userName) {
 
 function displayBlogPosts(posts) {
     const postList = document.querySelector(".post-list");
+    postList.innerHTML = ''; 
     if (posts.length === 0) {
         postList.innerHTML = "<p>No posts available.</p>";
         return;
@@ -144,6 +149,7 @@ function addEventListenersToButtons() {
     });
 }
 
+// Funksjon for å slette innlegg
 async function deletePost(postId) {
     try {
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/${postId}`, {
@@ -156,8 +162,8 @@ async function deletePost(postId) {
 
         if (response.ok) {
             console.log(`Post with ID ${postId} deleted.`);
-            const posts = await fetchPosts(); 
-            displayBlogPosts(posts);  
+            const posts = await fetchPosts(); // Refresh the posts
+            displayBlogPosts(posts);  // Refresh the posts
         } else {
             console.error('Failed to delete post:', response.status);
         }
