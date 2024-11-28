@@ -42,7 +42,7 @@ function addEventListenersToButtons() {
     editButtons.forEach(button => {
         button.addEventListener('click', async (event) => {
             const postId = event.target.dataset.id;
-            console.log('Edit button clicked for post ID:', postId); // Log postId for debugging
+            console.log('Edit button clicked for post ID:', postId); 
             openEditModal(postId);
         });
     });
@@ -79,7 +79,7 @@ async function deletePost(postId) {
 }
 
 async function openEditModal(postId) {
-    console.log('Opening edit modal for post ID:', postId); // Log for debugging
+    console.log('Opening edit modal for post ID:', postId);
     try {
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/${postId}`, {
             method: 'GET',
@@ -89,7 +89,7 @@ async function openEditModal(postId) {
         });
 
         const responseData = await response.json();
-        console.log('API response:', responseData); // Log entire response to check its structure
+        console.log('API response:', responseData); 
 
         if (!response.ok || !responseData.data || responseData.data.length === 0) {
             console.error(`No data found for post with ID ${postId}. Response data is empty or missing.`);
@@ -97,8 +97,8 @@ async function openEditModal(postId) {
             return;
         }
 
-        const post = responseData.data[0]; // Get the first post from the data array
-        console.log('Fetched post:', post); // Log the fetched post to check its structure
+        const post = responseData.data[0]; 
+        console.log('Fetched post:', post); 
 
         if (!post.title || !post.content) {
             console.error('Post data is incomplete:', post);
@@ -108,7 +108,7 @@ async function openEditModal(postId) {
         const editTitle = document.getElementById('edit-title');
         const editContent = document.getElementById('edit-content');
         
-        // Populate the modal inputs with the post data
+
         editTitle.value = post.title;
         editContent.value = post.content;
 
@@ -160,14 +160,14 @@ async function updatePost(postId, updatedPost) {
     }
 }
 
-// Add New Post functionality
+
 document.addEventListener('DOMContentLoaded', () => {
     const addPostButton = document.querySelector('.add-post-button');
     const popupOverlay = document.getElementById('popup-overlay');
     const closePopupButton = document.getElementById('close-popup');
     const postForm = document.getElementById('post-form');
 
-    // Check if the button is found and add event listener
+
     if (addPostButton) {
         console.log('Add Post Button Found');
         addPostButton.addEventListener('click', () => {
@@ -206,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Create New Post
 async function createPost(post) {
     try {
         const response = await fetch('https://v2.api.noroff.dev/blog/posts', {
@@ -228,7 +227,6 @@ async function createPost(post) {
     }
 }
 
-// Fetch Posts and Display
 document.addEventListener('DOMContentLoaded', async () => {
     const posts = await fetchPosts();
     console.log('Fetched posts:', posts);  
