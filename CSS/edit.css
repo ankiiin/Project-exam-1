@@ -97,7 +97,6 @@ hr {
     margin: 20px 0;
 }
 
-/* Popup Modal Styles */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -125,6 +124,8 @@ hr {
 }
 
 .popup-content h2 {
+    text-align: center; 
+    color: #333; 
     margin: 0;
     font-size: 1.5rem;
 }
