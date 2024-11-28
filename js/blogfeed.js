@@ -1,8 +1,13 @@
+import { getUsername } from "../js/utils/storage.js";
+
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5raWlpbiIsImVtYWlsIjoiYW5uaGFtNDkzNDRAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzA4MDI2Nzl9.a0NCLC25IYwiNwdII0_kJNjmO7g4JNsZUukkgnMWC9E";
 
 async function fetchCarouselPosts() {
+    const username = getUsername();
+    
     try {
-        const response = await fetch("https://v2.api.noroff.dev/blog/posts/ankiiin?limit=3", {
+        const response = await fetch(
+            `https://v2.api.noroff.dev/blog/posts/$(username)?limit=3`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -24,7 +29,7 @@ async function fetchCarouselPosts() {
 
 function displayCarouselPosts(posts) {
     const carouselContainer = document.querySelector('.carousel-images');
-    carouselContainer.innerHTML = ''; // Clear carousel
+    carouselContainer.innerHTML = ''; 
 
     posts.forEach(post => {
         const carouselItem = document.createElement('div');
@@ -139,7 +144,7 @@ async function displayBlogPosts() {
 
 async function handleNewPost() {
     document.getElementById('post-form').addEventListener('submit', async (event) => {
-        event.preventDefault();  // Prevent default form submission
+        event.preventDefault();  
         const title = document.getElementById('post-title').value;
         const text = document.getElementById('post-text').value;
         const imageUrl = document.getElementById('post-image').value;
