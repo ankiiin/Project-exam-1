@@ -121,6 +121,8 @@ hr {
     flex-direction: column;
     gap: 15px;
     position: relative;
+    justify-content: center;  /* Ensures content is centered */
+    align-items: center; /* Centers everything horizontally */
 }
 
 .popup-content h2 {
@@ -139,6 +141,9 @@ hr {
 }
 
 .popup-content button {
+    width: 100%;  /* Makes the button fill the available space */
+    max-width: 200px;  /* Ensures the button doesn't stretch too wide */
+    align-self: center;  /* Ensures the button is centered */
     color: black;
     padding: 10px;
     border: none;
