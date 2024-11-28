@@ -29,9 +29,9 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
  
             if (data.data && data.data.accessToken) {
                 localStorage.setItem("accessToken", data.data.accessToken);
-                localStorage.setItem("username", data.data.name);
-                localStorage.setItem("userEmail", email);
- 
+                localStorage.setItem("username", data.data.name); 
+                localStorage.setItem("userEmail", email);  
+
                 console.log("Redirecting to /post/edit.html...");
                 window.location.href = "../post/edit.html"; 
             } else {

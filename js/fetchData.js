@@ -1,6 +1,11 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5raWlpbiIsImVtYWlsIjoiYW5uaGFtNDkzNDRAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzA4MDI2Nzl9.a0NCLC25IYwiNwdII0_kJNjmO7g4JNsZUukkgnMWC9E";
+const token = localStorage.getItem('accessToken');
 
 export async function fetchPosts() {
+    if (!token) {
+        console.error("No access token found.");
+        return [];
+    }
+
     try {
         const response = await fetch('https://v2.api.noroff.dev/blog/posts/ankiiin', {
             method: 'GET',
@@ -23,9 +28,11 @@ export async function fetchPosts() {
     }
 }
 
-
 export async function fetchPostData(postId) {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5raWlpbiIsImVtYWlsIjoiYW5uaGFtNDkzNDRAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzA4MDI2Nzl9.a0NCLC25IYwiNwdII0_kJNjmO7g4JNsZUukkgnMWC9E"; // Your authorization token
+    if (!token) {
+        console.error("No access token found.");
+        return null;
+    }
 
     try {
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/ankiiin/${postId}`, {
@@ -50,7 +57,7 @@ export async function fetchPostData(postId) {
 
 export function displayBlogPosts(posts) {
     const blogPostsContainer = document.getElementById("blogPosts");
-    blogPostsContainer.innerHTML = ""; 
+    blogPostsContainer.innerHTML = "";
 
     if (!Array.isArray(posts)) {
         console.warn("Posts is not an array. Trying data.posts or data.data.");

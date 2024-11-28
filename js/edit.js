@@ -50,7 +50,7 @@ function addEventListenersToButtons() {
 
 async function deletePost(postId) {
     try {
-        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/${postId}`, {
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/ankiiin/${postId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ async function deletePost(postId) {
 
         if (response.ok) {
             console.log(`Post with ID ${postId} deleted.`);
-            fetchPosts();
+            fetchPosts(); // Refresh posts after deletion
         } else {
             console.error('Failed to delete post:', response.status);
         }
