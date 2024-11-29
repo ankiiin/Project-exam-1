@@ -72,7 +72,9 @@ async function deletePost(postId) {
 
         if (response.ok) {
             console.log(`Post with ID ${postId} deleted.`);
-            fetchPosts(); // Reload posts after deletion
+
+
+            window.location.href = 'edit.html'; 
         } else {
             console.error('Failed to delete post:', response.status);
         }
@@ -80,6 +82,7 @@ async function deletePost(postId) {
         console.error('Error deleting post:', error);
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', async () => {
     const posts = await fetchPosts();
