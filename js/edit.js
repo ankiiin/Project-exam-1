@@ -26,6 +26,9 @@ export function displayBlogPosts(posts) {
                 <h3>${post.title}</h3>
             </div>
             <div class="post-actions">
+                <!-- Edit button -->
+                <button class="edit-button" data-id="${post.id}">Edit</button>
+                <!-- Delete button -->
                 <button class="delete-button" data-id="${post.id}">Delete</button>
             </div>
         `;
@@ -36,7 +39,16 @@ export function displayBlogPosts(posts) {
 }
 
 function addEventListenersToButtons() {
+    const editButtons = document.querySelectorAll('.edit-button');
     const deleteButtons = document.querySelectorAll('.delete-button');
+
+    editButtons.forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const postId = event.target.dataset.id;
+            console.log(`Edit post with ID: ${postId}`);
+            window.location.href = `../post/edit-post.html?id=${postId}`;  
+        });
+    });
 
     deleteButtons.forEach(button => {
         button.addEventListener('click', async (event) => {
@@ -60,7 +72,7 @@ async function deletePost(postId) {
 
         if (response.ok) {
             console.log(`Post with ID ${postId} deleted.`);
-            fetchPosts(); 
+            fetchPosts(); // Reload posts after deletion
         } else {
             console.error('Failed to delete post:', response.status);
         }
