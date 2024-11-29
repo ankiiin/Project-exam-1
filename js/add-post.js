@@ -47,7 +47,7 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
 
     if (response.ok) {
       console.log("Blog post added successfully.");
-      window.location.href = "edit-posts.html";
+      window.location.href = "../post/edit.html";
     } else {
       const errorData = await response.json();
       console.error("Error adding post:", errorData);

@@ -22,15 +22,15 @@
 
 .edit-posts-section h3 {
     text-align: center;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .post-list {
     display: flex;
     flex-direction: column;
-    gap: 30px; 
-    margin-bottom: 40px; 
-    padding: 20px; 
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
 }
 
 .post-list .post-item {
@@ -38,31 +38,40 @@
     align-items: center;
     justify-content: flex-start;
     background-color: #EDE8E1;
-    padding: 20px; 
+    padding: 20px;
     border-radius: 10px;
     width: 100%;
-    max-width: 900px; 
-    box-sizing: border-box; 
-    margin: 0 auto; 
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .post-item {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
-
 .post-item img {
-    width: 120px; 
-    height: 120px; 
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: 8px;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .post-content {
     display: flex;
-    flex-direction: row;
-    flex-grow: 1; 
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.post-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #333;
+    margin-bottom: 15px; 
 }
 
 .post-actions {
@@ -70,21 +79,7 @@
     flex-direction: row;
     gap: 10px;
     align-items: center;
-}
-
-.post-content h3 {
-    margin: 0; 
-    font-size: 1rem; 
-    font-weight: 600;
-    line-height: 1.3; 
-    color: #333; 
-}
-
-.post-info {
-    display: flex;
-    gap: 10px; 
-    align-items: center; 
-    margin-left: auto; 
+    margin-left: auto;
 }
 
 .edit-button {
@@ -95,32 +90,118 @@
     background-color: #8AA784; 
     color: white;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    display: inline-block; 
+    display: inline-block;
     text-align: center;
-    font-size: 14px; 
-    margin-right: 10px; 
 }
-
-
-.edit-button:hover {
-    background-color: #6f9a67; 
-    transform: scale(1.05);  
-}
-
-.edit-button {
-    display: inline-block !important; 
-}
-
 
 .delete-button {
     padding: 8px 15px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-.delete-button {
     background-color: #D9534F;
     color: white;
 }
 
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.post-list .post-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #EDE8E1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.post-item {
+    margin-bottom: 20px;
+}
+
+.post-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.post-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+@media (max-width: 768px) {
+    .post-item {
+        flex-direction: column; 
+        align-items: center;
+        padding: 15px;
+        margin-bottom: 20px; 
+    }
+
+    .post-item img {
+        width: 100px; 
+        height: 100px;
+        margin-bottom: 15px; 
+    }
+
+    .post-content {
+        text-align: center; 
+    }
+
+    .post-content h3 {
+        font-size: 1rem; 
+        margin-bottom: 15px; 
+    }
+
+    .post-actions {
+        display: flex;
+        justify-content: center; 
+        gap: 15px; 
+        width: 100%;
+        margin-top: 15px; 
+    }
+
+    .edit-button {
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #8AA784;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        text-align: center;
+        width: auto;
+    }
+
+    .delete-button {
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #D9534F;
+        color: white;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        text-align: center;
+        width: auto; 
+    }
+}
