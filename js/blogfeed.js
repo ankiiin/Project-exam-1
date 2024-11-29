@@ -151,7 +151,7 @@ async function displayBlogPosts() {
             <div class="overlay">${post.title}</div>
         `;
         postElement.addEventListener('click', () => {
-            window.location.href = `HTML/blogpost.html?id=${post.id}`; 
+            window.location.href = `html/blogpost.html?id=${post.id}`; 
         });
 
         postGrid.appendChild(postElement);
