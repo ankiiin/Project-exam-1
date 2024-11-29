@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/register.css">
-    <script src="../js/main.js"></script>
-    <script src="../js/register.js"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/register.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -16,6 +16,9 @@
             <h1 class="responsive-logo">Lavara Wellness</h1>
         </a>
         <nav class="desktop-nav">
+            <a href="login.html" class="nav-text login-button" id="loginButton" style="display:none;">
+                <span>Login</span>
+              </a>              
             <a href="javascript:void(0)" class="nav-text register-button" id="registerButton">
                 <span id="username-display">Register</span>
             </a>
@@ -23,18 +26,6 @@
             <button id="logout-button" class="logout-button" style="display:none;">Log out</button>
         </nav>
     </header>
-    <div id="joinPopup" class="popup">
-        <div class="popup-content">
-            <button class="close-button" aria-label="Close join popup">×</button>
-            <h3 class="popup-heading">Welcome! Choose an option</h3>
-            <a href="../html/login.html">
-                <button class="login-button">Login</button>
-            </a>
-            <a href="../html/register.html">
-                <button class="register-button">Register</button>
-            </a>
-        </div>
-    </div>
     <main>
         <section class="register-form">
             <div class="text-container">

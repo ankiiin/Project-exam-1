@@ -45,7 +45,7 @@ p {
     color: #3D4435; 
 }
 
-#loginButton {
+#loginFormButton {
     background-color: #8AA784; 
     color: #EDE8E1; 
     font-size: 16px;
@@ -57,7 +57,7 @@ p {
     margin-top: 20px;
 }
 
-#loginButton:hover {
+#loginFormButton:hover {
     background-color: #A1B88D; 
     color: #EDE8E1;
 }

@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/main.js"></script>
-    <script src="../js/login.js" defer></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/login.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -16,6 +16,9 @@
             <h1 class="responsive-logo">Lavara Wellness</h1>
         </a>
         <nav class="desktop-nav">
+            <a href="login.html" class="nav-text login-button" id="loginButton" style="display:none;">
+                <span>Login</span>
+              </a>              
             <a href="javascript:void(0)" class="nav-text register-button" id="registerButton">
                 <span id="username-display">Register</span>
             </a>
@@ -23,7 +26,6 @@
             <button id="logout-button" class="logout-button" style="display:none;">Log out</button>
         </nav>
     </header>
-
     <main>
         <div class="login-container">
             <h1>Login To Your Account</h1>
@@ -37,12 +39,11 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" id="loginButton">Login</button>
+                <button type="submit" id="loginFormButton">Login</button>
             </form>
             <p id="errorMessage" class="error-message" style="display: none;">Invalid email or password</p>
         </div>
     </main>
-
     <footer>
         <p>Please sign up to our newsletter!</p>
         <div class="newsletter-signup">
