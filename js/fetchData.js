@@ -1,12 +1,7 @@
-const token = localStorage.getItem('accessToken');
-
 export async function fetchPosts() {
-    
-
     try {
         const response = await fetch('https://v2.api.noroff.dev/blog/posts/ankiiin', {
             method: 'GET',
-            
         });
 
         if (!response.ok) {
@@ -23,12 +18,9 @@ export async function fetchPosts() {
 }
 
 export async function fetchPostData(postId) {
-    
-
     try {
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/ankiiin/${postId}`, {
             method: 'GET',
-            
         });
 
         if (!response.ok) {

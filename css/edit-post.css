@@ -1,0 +1,70 @@
+.add-post-section {
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #3D4435; 
+}
+
+.add-post-section h2 {
+    color: #EDE8E1;
+    margin-bottom: 20px;
+}
+
+.add-post-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  
+}
+
+.input-group,
+.input-text-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label,
+.input-text-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #3D4435;
+    border-radius: 8px;
+    background-color: #EDE8E1;
+    color: #3D4435;
+}
+
+.input-text-group textarea {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #3D4435;
+    border-radius: 8px;
+    background-color: #EDE8E1;
+    color: #3D4435;
+    resize: both;
+}
+
+.add-post-section button {
+    background-color: #8AA784;
+    color: #EDE8E1;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.add-post-section button:hover {
+    background-color: #6f9a67;
+}

@@ -1,4 +1,4 @@
-import { getUsername } from "./utils/storage.js";
+import { getUsername } from "../utils/storage.js";
 
 document.getElementById("post-form").addEventListener("submit", async (e) => {
   e.preventDefault();

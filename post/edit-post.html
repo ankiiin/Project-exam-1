@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lavara Wellness - Edit Blog Posts</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/edit-post.css">
+        <script src="../js/main.js" type="module"></script>
+        <script src="../js/edit-post.js" type="module"></script>
+    </head>
+<body>
+    <header>
+        <a href="/index.html" class="responsive-logo-link">
+            <h1 class="responsive-logo">Lavara Wellness</h1>
+        </a>
+        <nav class="desktop-nav">
+            <a href="login.html" class="nav-text login-button" id="loginButton" style="display:none;">
+                <span>Login</span>
+              </a>              
+            <a href="javascript:void(0)" class="nav-text register-button" id="registerButton">
+                <span id="username-display">Register</span>
+            </a>
+            <button id="edit-button" class="logout-button" style="display:none;">Edit</button>
+            <button id="logout-button" class="logout-button" style="display:none;">Log out</button>
+        </nav>
+    </header>
+    <main>
+        <div class="add-post-section">
+            <h2>Edit Your Post</h2>
+            <form id="edit-post-form">
+                <div class="input-group">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" placeholder="Title">
+                </div>
+                <div class="input-text-group">
+                    <label for="post-text">Text</label>
+                    <textarea id="post-text" placeholder="Text"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="post-image">Image URL</label>
+                    <input type="url" id="post-image" placeholder="Image URL">
+                </div>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Please sign up to our newsletter!</p>
+        <div class="newsletter-signup">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <button class="signup-button">Sign up</button>
+        </div>
+    </footer>
+</body>
+</html>
