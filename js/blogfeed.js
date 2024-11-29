@@ -39,7 +39,7 @@ function displayCarouselPosts(posts) {
         carouselItem.className = 'carousel-item';
 
         const link = document.createElement('a');
-        link.href = `../HTML/blogpost.html?id=${post.id}`;
+        link.href = `../html/blogpost.html?id=${post.id}`;
         link.className = 'carousel-link';
 
         const image = document.createElement('img');
@@ -178,31 +178,9 @@ async function handleNewPost() {
     });
 }
 
-async function createPost(postData) {
-    try {
-        const response = await fetch('https://v2.api.noroff.dev/blog/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(postData)
-        });
-
-        if (response.ok) {
-            console.log('Post created successfully');
-        } else {
-            console.error('Failed to create post:', response.status);
-        }
-    } catch (error) {
-        console.error('Error creating post:', error);
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     displayBlogPosts();  
-    fetchCarouselPosts();  
-    handleNewPost();  
+    fetchCarouselPosts();   
 });
 
 window.addEventListener("resize", () => {

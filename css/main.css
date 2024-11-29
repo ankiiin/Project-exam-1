@@ -55,6 +55,10 @@ header h1 {
     transform: scale(1.05); 
 }
 
+nav a, nav button {
+    cursor: pointer;
+}
+
 .desktop-nav {
     font-size: 20px;
     color: #EDE8E1;
