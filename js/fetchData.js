@@ -1,18 +1,12 @@
 const token = localStorage.getItem('accessToken');
 
 export async function fetchPosts() {
-    if (!token) {
-        console.error("No access token found.");
-        return [];
-    }
+    
 
     try {
         const response = await fetch('https://v2.api.noroff.dev/blog/posts/ankiiin', {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+            
         });
 
         if (!response.ok) {
@@ -29,18 +23,12 @@ export async function fetchPosts() {
 }
 
 export async function fetchPostData(postId) {
-    if (!token) {
-        console.error("No access token found.");
-        return null;
-    }
+    
 
     try {
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/ankiiin/${postId}`, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+            
         });
 
         if (!response.ok) {
