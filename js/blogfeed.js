@@ -32,7 +32,7 @@ async function fetchCarouselPosts() {
 
 function displayCarouselPosts(posts) {
     const carouselContainer = document.querySelector('.carousel-images');
-    carouselContainer.innerHTML = '';  // Clear previous content
+    carouselContainer.innerHTML = '';  
 
     posts.forEach(post => {
         const carouselItem = document.createElement('div');
