@@ -1,4 +1,4 @@
-import { fetchPostData } from './js/fetchData.js';
+import { fetchPostData } from './fetchData.js';
 
 
 document.addEventListener('DOMContentLoaded', async () => {
