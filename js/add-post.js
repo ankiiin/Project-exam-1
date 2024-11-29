@@ -18,7 +18,7 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
 
   const postData = {
     title: title,
-    content: content,
+    body: content,
     media: {
       url: image || "",
       alt: "Blog post image",

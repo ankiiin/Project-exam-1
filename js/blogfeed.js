@@ -167,7 +167,7 @@ async function handleNewPost() {
 
         const newPost = {
             title: title,
-            text: text,
+            body: text,
             media: { url: imageUrl || 'https://via.placeholder.com/150' }
         };
 

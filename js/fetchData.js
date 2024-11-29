@@ -35,6 +35,36 @@ export async function fetchPostData(postId) {
     }
 }
 
+export async function updatePost(postId, updatedData) {
+    const token = localStorage.getItem('accessToken');  
+    if (!token) {
+        console.error("No access token found. Please log in.");
+        return;  
+    }
+
+    try {
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/ankiiin/${postId}`, {
+            method: 'PUT',  
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
+            },
+            body: JSON.stringify(updatedData),  
+        });
+
+        if (response.ok) {
+            console.log("Post updated successfully");
+            return await response.json();  
+        } else {
+            console.error('Failed to update post:', response.status);
+            return null;
+        }
+    } catch (error) {
+        console.error('Error updating post:', error);
+        return null;
+    }
+}
+
 export function displayBlogPosts(posts) {
     const blogPostsContainer = document.getElementById("blogPosts");
     blogPostsContainer.innerHTML = "";
