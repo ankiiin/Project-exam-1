@@ -14,7 +14,7 @@ async function fetchCarouselPosts() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}` 
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -59,60 +59,64 @@ function displayCarouselPosts(posts) {
 
     const firstClone = carouselContainer.firstElementChild.cloneNode(true);
     const lastClone = carouselContainer.lastElementChild.cloneNode(true);
+    firstClone.classList.add('clone');
+    lastClone.classList.add('clone');
     carouselContainer.appendChild(firstClone);
     carouselContainer.insertBefore(lastClone, carouselContainer.firstElementChild);
-    currentIndex = 1;
-    showSlide(currentIndex);
+
+    currentIndex = 1; 
+    updateCarousel(); 
+}
+
+function updateCarousel() {
+    const carouselContainer = document.querySelector('.carousel-images');
+    const slides = document.querySelectorAll('.carousel-item');
+    const offset = -currentIndex * slides[0].offsetWidth;
+    carouselContainer.style.transition = "none";
+    carouselContainer.style.transform = `translateX(${offset}px)`;
 }
 
 function showSlide(index) {
     const carouselContainer = document.querySelector('.carousel-images');
     const slides = document.querySelectorAll('.carousel-item');
-    const offset = -index * slides[0].offsetWidth;
 
     if (isTransitioning) return;
 
-    isTransitioning = true; 
+    isTransitioning = true;
+    const offset = -index * slides[0].offsetWidth;
 
     carouselContainer.style.transition = "transform 0.5s ease";
     carouselContainer.style.transform = `translateX(${offset}px)`;
 
     carouselContainer.addEventListener("transitionend", () => {
-        isTransitioning = false; 
+        isTransitioning = false;
 
-        if (index === slides.length - 1) {
-            carouselContainer.style.transition = "none";
+        if (index === 0) {
+            currentIndex = slides.length - 2;
+            updateCarousel();
+        } else if (index === slides.length - 1) {
             currentIndex = 1;
-            carouselContainer.style.transform = `translateX(${-currentIndex * slides[0].offsetWidth}px)`;
+            updateCarousel();
         }
-    });
+    }, { once: true });
 }
 
 function nextSlide() {
     const slides = document.querySelectorAll('.carousel-item');
-    const maxIndex = slides.length - 2;
-
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; 
-    }
-
+    currentIndex++;
     showSlide(currentIndex);
 }
 
 function prevSlide() {
     const slides = document.querySelectorAll('.carousel-item');
-    const maxIndex = slides.length - 2;
-
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = maxIndex - 1; 
-    }
-
+    currentIndex--;
     showSlide(currentIndex);
 }
+
+document.querySelector('.carousel-control.next').addEventListener('click', nextSlide);
+document.querySelector('.carousel-control.prev').addEventListener('click', prevSlide);
+
+fetchCarouselPosts();
 
 fetchCarouselPosts();
 document.querySelector('.carousel-control.next').addEventListener('click', nextSlide);
