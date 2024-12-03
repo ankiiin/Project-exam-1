@@ -1,5 +1,7 @@
 # Lavara Wellness Blog
 
+![Alt tekst](https://ankiiin.github.io/images-exam/meditation.jpg)
+
 Lavara Wellness Blog is a front-end web application built as part of my Project Exam 1. The goal of this project was to create a dynamic and user-friendly blog application focusing on wellness topics like healthy living, mindfulness, and self-care.
 
 # Description
