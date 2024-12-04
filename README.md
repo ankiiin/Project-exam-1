@@ -45,7 +45,6 @@ The Lavara Wellness Blog allows users to explore, read, and interact with conten
 
 - **Noroff API Documentation** 
 - **Font Awesome** 
-- **Roboto Font** 
 - **ChatGPT** - Made all the images on the website
 
 # Acknowledgments
