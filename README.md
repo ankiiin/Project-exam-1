@@ -1,84 +1,52 @@
-# Project-exam-1
+# Lavara Wellness Blog
 
-**Lavara Wellness Blog - README**
+![Alt tekst](https://ankiiin.github.io/images-exam/meditation.jpg)
 
-**Project Title:**
+Lavara Wellness Blog is a front-end web application built as part of my Project Exam 1. The goal of this project was to create a dynamic and user-friendly blog application focusing on wellness topics like healthy living, mindfulness, and self-care.
 
-Lavara Wellness Blog
+# Description
 
-**Description:**
+The Lavara Wellness Blog allows users to explore, read, and interact with content about a healthier and more mindful lifestyle. The blog is built with a clean, minimalist design and ensures seamless navigation across pages.
 
-Lavara Wellness is a blogging platform built with HTML, CSS, and JavaScript. The webiste allows users to read and create blog posts, while giving admin users the ability to edit and delete posts. It fetches and updates blog content via an API, and includes user authentication features for admin access. The design is responsive, ensuring a good user experience on both mobile and desktop devices.
+**Key Features:**
+- **Dynamic Blog Feed:** Displays posts fetched from an external API.
+- **Individual Blog Post Pages:** Users can view detailed content for each blog post.
+- **Responsive Design:** Optimized for both desktop and mobile viewing.
+- **Navigation Menu:** Includes links for Login, Registration, and easy navigation between pages.
+- **Interactive Elements:** Functional buttons for adding, editing, and deleting blog posts.
 
-**Features:**
+# Built with
 
-- **View Blog Posts:** Any user can view the blog posts on the homepage.
-- **Create Blog Posts:** Any logged-in user can create new blog posts using a simple form.
-- **Edit and Delete Posts:** Only admin users have the ability to edit or delete existing posts.
-- **Responsive Design:** The website is designed to work on various screen sizes, making it mobile-friendly.
+- HTML - For structuring content.
+- CSS - For styling and layout.
+- JavaScript - For fetching API data and adding interactivity.
+- Noroff API - To manage blog posts dynamically.
 
-**Table of Contents:**
+# Getting started
 
-- Technologies Used
-- Usage Instructions
-- Issues and Fixes
-- Acknowledgments
+**Installing**
+1. Clone the repository:
+   https://github.com/ankiiin/Project-exam-1
+2. Open the project folder in your preferred code editor.
 
-**Technologies Used:**
+**Running**
+1. Launch the index.html file in your browser to view the homepage.
 
-- **HTML:** The structure and content of the web pages.
-- **CSS:** For styling, creating a responsive design with media queries.
-- **JavaScript:** Used for DOM manipulation, handling form submissions, and interacting with the API.
-- **API:** The website communicates with an external API to fetch and update blog data.
-- **Local Storage:** For storing the user’s authentication token temporarily.
+# Challenges and Solutions
 
-**Requirements:**
+- **Challenge:** Setting up the API integration.
+  - **Solution:** Used fetch to retrieve data and structured responses to dynamically populate the blog feed and post pages.
+- **Challenge:** Ensuring responsive design across devices.
+  - **Solution:** Implemented media queries and tested thoroughly on mobile, tablet, and desktop.
+- **Challenge:** Managing different pages with consistent styling.
+  - **Solution:** Organized CSS files for global and page-specific styles.
 
-- **Web Browser:** Any modern browser (Chrome, Firefox, Safari, Edge, etc.)
-- **Text Editor:** VS Code.
-- **API Access:** The website interacts with an external API (https://v2.api.noroff.dev/blog/posts/ankiiin). You’ll need an internet connection to use it.
+# Sources
 
-**Usage Instructions:**
+- **Noroff API Documentation** 
+- **Font Awesome** 
+- **ChatGPT** - Made all the images on the website
 
-1. **Viewing Posts:**
-Once the website is open in the browser, anyone (whether logged in or not) can view the posts displayed on the homepage.
+# Acknowledgments
 
-2. **Adding a New Post:**
-If you're logged in, you can create new blog posts.
-Fill out the form with a title, text content, and an optional image URL.
-Submit the form, and the post will be added to the list of blog posts.
-
-3. **Editing a Post (Admin Only):**
-Only admin users can edit existing posts.
-After logging in as an admin, you can visit the "Edit Post" page where you can modify any post.
-Changes will be reflected in the API, and the updated post will appear on the homepage.
-
-4. **Deleting a Post (Admin Only):**
-Admin users can also delete posts from the admin interface.
-Deleting a post will remove it both from the interface and the API.
-
-**Issues and Fixes:**
-
-Here are some of the issues encountered and how they were fixed:
-
-1. **Issue with Fetching Post ID:**
-- Initially, there was a problem fetching the post ID from the URL. This was caused by incorrect URL parameters and query string parsing.
-- Fixed by using new URLSearchParams(window.location.search) to properly extract the post ID.
-
-2. **Authorization Header Missing:**
-- The website would fail to update or delete posts because the authorization token was not included in the headers.
-- Fixed by adding the Authorization header in the fetch() request for all admin actions.
-
-3. **No Content Available for Blog Posts:**
-- After creating a blog post, the content would show as "No content available" when viewed.
-- This was caused by incorrect data being passed to the API on post creation. The issue was resolved by ensuring that the body of the post was properly formatted and sent in the API request.
-
-4. **Error 401 (Unauthorized):**
-- Users would see a 401 Unauthorized error when attempting to update or delete posts without proper authentication.
-- This was fixed by ensuring the admin login correctly stores and uses an access token for API requests.
-
-**Acknowledgments:**
-
-- Noroff API: This project uses the Noroff blog API for fetching and updating blog data.
-- Font Awesome: Used for the icons in the app.
-- Google Fonts: Used for typography.
+- Thanks to my instructor and classmates for support and feedback throughout the project.
