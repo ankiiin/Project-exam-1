@@ -1,51 +1,61 @@
-# Lavara Wellness Blog
+# Lavara Wellness Blog – Project Exam 1
 
-![Alt tekst](https://ankiiin.github.io/images-exam/meditation.jpg)
+Lavara Wellness Blog is a front-end web application developed as part of Project Exam 1 at Noroff. The goal of the project was to build a dynamic and user-friendly blog platform focused on wellness topics such as healthy living, mindfulness, and self-care.
 
-Lavara Wellness Blog is a front-end web application built as part of my Project Exam 1. The goal of this project was to create a dynamic and user-friendly blog application focusing on wellness topics like healthy living, mindfulness, and self-care.
+---
 
 # Description
 
-The Lavara Wellness Blog allows users to explore, read, and interact with content about a healthier and more mindful lifestyle. The blog is built with a clean, minimalist design and ensures seamless navigation across pages.
+The Lavara Wellness Blog allows users to explore and read blog posts related to a healthier and more mindful lifestyle. The application is built with a clean and minimalist design, with a strong focus on usability and clear navigation.
+
+As part of later improvements, a sticky navigation bar was added to enhance the user experience by keeping key navigation options accessible while scrolling through content.
+
+---
 
 **Key Features:**
-- **Dynamic Blog Feed:** Displays posts fetched from an external API.
-- **Individual Blog Post Pages:** Users can view detailed content for each blog post.
-- **Responsive Design:** Optimized for both desktop and mobile viewing.
-- **Navigation Menu:** Includes links for Login, Registration, and easy navigation between pages.
-- **Interactive Elements:** Functional buttons for adding, editing, and deleting blog posts.
+- Dynamic blog feed displaying posts fetched from an external API  
+- Individual blog post pages with detailed content  
+- Responsive design optimized for desktop, tablet, and mobile  
+- Sticky navigation bar for improved usability and page navigation  
+- Navigation menu with login, registration, and page links  
+- Interactive elements for creating, editing, and deleting blog posts 
+
+---
 
 # Built with
 
-- HTML - For structuring content.
-- CSS - For styling and layout.
-- JavaScript - For fetching API data and adding interactivity.
-- Noroff API - To manage blog posts dynamically.
+- HTML for content structure  
+- CSS for styling and layout  
+- JavaScript for interactivity and API communication  
+- Noroff API for managing blog posts dynamically
+
+---
 
 # Getting started
 
-**Installing**
-1. Clone the repository:
-   https://github.com/ankiiin/Project-exam-1
+### Installation
+1. Clone the repository:  
+   https://github.com/ankiiin/Project-exam-1  
 2. Open the project folder in your preferred code editor.
 
-**Running**
-1. Launch the index.html file in your browser to view the homepage.
+### Running the Project
+Open the `index.html` file in your browser to view the homepage.
+
+---
 
 # Challenges and Solutions
 
-- **Challenge:** Setting up the API integration.
-  - **Solution:** Used fetch to retrieve data and structured responses to dynamically populate the blog feed and post pages.
-- **Challenge:** Ensuring responsive design across devices.
-  - **Solution:** Implemented media queries and tested thoroughly on mobile, tablet, and desktop.
-- **Challenge:** Managing different pages with consistent styling.
-  - **Solution:** Organized CSS files for global and page-specific styles.
+One of the main challenges was setting up and structuring API integration. This was solved by using fetch requests and dynamically rendering content based on API responses.
+
+Another challenge was ensuring consistent styling and navigation across multiple pages. This was addressed by organizing CSS files into global and page-specific styles and later improving navigation usability by implementing a sticky navbar.
+
+---
 
 # Sources
 
-- **Noroff API Documentation** 
-- **Font Awesome** 
-- **ChatGPT** - Made all the images on the website
+- Noroff API documentation  
+- Font Awesome  
+- ChatGPT (used for generating images on the website)
 
 # Acknowledgments
 
