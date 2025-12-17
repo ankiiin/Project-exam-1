@@ -19,7 +19,10 @@ header {
     align-items: center;
     padding: 20px;
     width: 100%;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #3D4435;
 }
 
 .logo, .responsive-logo-link, .responsive-logo {
@@ -113,10 +116,3 @@ footer p {
     font-weight: bold;
     cursor: pointer;
 }
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: #3D4435;
-  }
